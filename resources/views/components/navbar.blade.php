@@ -8,46 +8,37 @@
       <div class="collapse navbar-collapse" id="navbarsExample07XL">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
-          </li>
-        @guest
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('login')}}">Nuovo Articolo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('register')}}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('login')}}">Login</a>
-          </li>
-          
-        @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('articleNew')}}">Nuovo Articolo</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">              
-              Benvenuto/a,
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">         
-              <li><a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                     Logout
-                 </a></li>
-                
-                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                     @csrf
-                 </form>            
-              <li><hr class="dropdown-divider"></li>              
-            </ul>            
+            <a class="nav-link" href="{{route('articleNew')}}">Nuovo articolo</a>
           </li>
         </ul>
-        @endguest
-        <form>
-          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        </form>
+        <div>
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
+                        @auth
+                            Benvenuto, {{Auth::user()->name}}
+                        @else
+                            Area Personale
+                        @endauth
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
+                      @guest
+                        <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
+                        <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                      @else 
+                      <li><a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                            </a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                        </form>
+                      @endguest
+                    </ul>
+              </li>  
+            </ul>
+        </div>
       </div>
     </div>
   </nav>

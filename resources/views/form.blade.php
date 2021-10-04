@@ -19,12 +19,21 @@
             <div class="col-12 col-md-6 d-flex justify-content-center">
         
     
-                <form method="POST" action="{{route('articleNew')}}">
+                <form method="POST" action="{{route('article.store')}}">
                     @csrf
 
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Titolo</label>
                         <input name="title" type="text" class="form-control" value="{{old('title')}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Categorie</label>
+                        <select name="category">
+                            <option value=""></option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
 

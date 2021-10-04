@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'home']) ->name('home');
 
 Route::get('/article/form', [AddController::class, 'new'])->name('articleNew');
+Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store');
+
