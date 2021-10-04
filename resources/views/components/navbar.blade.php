@@ -18,17 +18,26 @@
             <a class="nav-link" href="{{route('login')}}">Login</a>
           </li>
           @else
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="{{route('articleForm')}}">Article</a>
+          </li> --}}
+          
           <li class="nav-item dropdown">
-            <li><a class="dropdown-item" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-               Logout
-           </a></li>
-            </li>
-
-           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-               @csrf
-           </form>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">              
+              Benvenuto/a,
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">         
+              <li><a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                     Logout
+                 </a></li>
+                
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                     @csrf
+                 </form>            
+              <li><hr class="dropdown-divider"></li>              
+            </ul>            
           </li>
         </ul>
         @endguest
