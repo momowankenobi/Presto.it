@@ -10,24 +10,32 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
           </li>
+         @guest
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="{{route('register')}}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link" href="{{route('login')}}">Login</a>
           </li>
+          @else
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <li><a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+               Logout
+           </a></li>
+            </li>
+
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+               @csrf
+           </form>
           </li>
         </ul>
+        @endguest
         <form>
           <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form>
       </div>
     </div>
   </nav>
+      
