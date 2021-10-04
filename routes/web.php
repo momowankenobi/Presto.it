@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PublicController::class, 'home']) ->name('home');
-
-Route::get('/article/form', [AddController::class, 'new'])->name('articleNew');
-Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store');
+Route::get('/', [PublicController::class, 'home']) ->name('home'); //Homepage
+Route::get('/article/form', [AddController::class, 'new'])->name('articleNew'); //Form
+Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store'); //Ricezione dati dal form e invio sul database
 
