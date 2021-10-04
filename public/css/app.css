@@ -11277,4 +11277,69 @@ textarea.form-control-lg {
   }
 }
 
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+:root{
+
+    --main: #66FCF1;
+    --sec: #FFFFFF;
+    --darker: #111111;
+    --blue: #45A29E; 
+}
+
+.text-main {
+    color: var(--main)
+}
+
+.bg-main {
+    background-color: var(--main) ;
+}
+
+.border-main {
+    border: 2px solid var(--main)
+}
+
+.text-sec {
+    color: var(--sec)
+}
+
+.bg-sec {
+    background-color: var(--sec) ;
+}
+
+.border-sec {
+    border: 2px solid var(--sec)
+}
+
+.text-darker {
+    color: var(--darker)
+}
+
+.bg-darker {
+    background-color: var(--darker) ;
+}
+
+.border-darker {
+    border: 2px solid var(--darker)
+}
+
+.text-blue {
+    color: var(--blue)
+}
+
+.bg-blue {
+    background-color: var(--blue) ;
+}
+
+.border-blue {
+    border: 2px solid var(--blue)
+}
 

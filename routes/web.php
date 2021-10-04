@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'home']) ->name('home');
+
+Route::get('/article/form', [AddController::class, 'new'])->name('articleNew');
