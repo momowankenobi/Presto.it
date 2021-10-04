@@ -11343,3 +11343,95 @@ h1,h2,h3{
     border: 2px solid var(--blue)
 }
 
+/* Home Header */
+.home-header {
+    height: 100%;
+    width: 100%;
+    padding: 0 8%;
+    background-color: var(--sec);
+}
+
+.nav-el {
+    padding: 28px 0;
+}
+
+.nav-el li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-el li a {
+    text-decoration: none;
+    color: var(--darker);
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-el li a::after {
+    content: '';
+    background: var(--main);
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.nav-el li a:hover::after {
+    width: 100%;
+}
+
+.btn-newadd {
+    background: var(--main);
+    color: white !important;
+    padding: 10px 30px !important;
+    border-radius: 3px !important;
+    cursor: pointer !important;
+}
+
+.content {
+    position: absolute;
+    left: 50%;
+    
+}
+
+/* .home-header {
+    height: 60vh;
+    /* background-image: url(../../public/img/lightbulb-2692247_1920.jpg);
+    background-position: left;
+    background-size: cover;
+    position: relative;
+}
+
+.home-header:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url('../../public/img/lightbulb-2692247_1920.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+}
+
+.welcome {
+    height: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+#benvenuti {
+    font-size: xx-large;
+    color: var(--blue);
+} */
+
+
+
+

@@ -1,6 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" aria-label="Ninth navbar example">
     <div class="container-xl">
-      <a class="navbar-brand" href="#">Container XL</a>
+      <a href="{{route('home')}}">
+        <img src="../../../public/img/Presto.png" alt="">
+      </a>
+      <a class="navbar-brand" href="{{route('home')}}">Container XL</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

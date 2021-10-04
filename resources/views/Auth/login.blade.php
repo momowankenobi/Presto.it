@@ -21,8 +21,8 @@
                   <input name="password" type="password" class="form-control">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Invia</button> 
-            
+                <button type="submit" class="btn btn-primary">Invia</button>
+                <p class="mt-3">Non hai un account? <a href="{{route('register')}}">Registrati</a>
             </form>
         
         

@@ -28,13 +28,13 @@
                     </div>
 
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Indirizzo mail</label>
-                      <input name="email" type="email" class="form-control" value="{{old('email')}}">
+                        <label for="exampleInputEmail1" class="form-label">Indirizzo mail</label>
+                        <input name="email" type="email" class="form-control" value="{{old('email')}}">
                     </div>
 
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input name="password" type="password" class="form-control">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input name="password" type="password" class="form-control">
                     </div>
 
                     <div class="mb-3">
@@ -42,8 +42,9 @@
                         <input name="password_confirmation" type="password" class="form-control">
                     </div>
                     
-                      <button type="submit" class="btn btn-primary">Invia</button>
-                 
+                    <button type="submit" class="btn btn-primary">Invia</button>
+                    <p class="mt-3">Hai già un account? <a href="{{route('login')}}">Accedi</a>
+                    </p>
                     </form>
             
             
