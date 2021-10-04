@@ -1,5 +1,9 @@
 <x-layout>
 
+  <x-slot name='title'>Login</x-slot>
+
+  <h1 class="text-center my-5 display-4">Login</h1>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
@@ -17,7 +21,7 @@
                   <input name="password" type="password" class="form-control">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Submit</button> 
+                <button type="submit" class="btn btn-primary">Invia</button> 
             
             </form>
         
