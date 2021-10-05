@@ -112,11 +112,11 @@ h1,h2,h3{
     cursor: pointer !important;
 }
 
-.content {
+/* .content {
     position: absolute;
     left: 50%;
     
-}
+} */
 
 /* .home-header {
     height: 60vh;
