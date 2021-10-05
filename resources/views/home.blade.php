@@ -26,8 +26,10 @@
     <div class="container">
         <div class="row justify-content-center">
             @foreach ($adds as $add)
-                <div class="mt-3 d-flex justify-content-center">
-                    <a href="{{route('add.show', compact('add'))}}">@include('components.card')</a>
+                <div class="my-3 d-flex justify-content-center">
+                    <a href="{{route('add.show', compact('add'))}}">
+                        @include('components.card')
+                    </a>
                 </div>
             @endforeach
         </div>

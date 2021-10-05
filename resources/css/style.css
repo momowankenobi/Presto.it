@@ -38,11 +38,15 @@ h1,h2,h3{
 }
 
 .border-sec {
-    border: 2px solid var(--sec)
+    border: 2px solid var(--sec);
 }
 
 .text-darker {
-    color: var(--darker)
+    color: var(--darker) !important;
+}
+
+a{
+    text-decoration: none !important;
 }
 
 .bg-darker {
@@ -50,11 +54,11 @@ h1,h2,h3{
 }
 
 .border-darker {
-    border: 2px solid var(--darker)
+    border: 2px solid var(--darker);
 }
 
 .text-blue {
-    color: var(--blue)
+    color: var(--blue);
 }
 
 .bg-blue {
@@ -62,7 +66,7 @@ h1,h2,h3{
 }
 
 .border-blue {
-    border: 2px solid var(--blue)
+    border: 2px solid var(--blue);
 }
 
 /* Home Header */

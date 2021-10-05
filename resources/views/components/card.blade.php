@@ -1,20 +1,23 @@
 <div class="col-10 col-md-8">
-    <div class="card">
-        <div class="card-header">{{$add->title}}</div>
-        <div class="card-body">
-            <p>
-                <img src="https://via.placeholder.com/300x150" class="rounded float-end" alt="">
+    <div class="card" onclick="{{route('add.show', compact('add'))}}">
+        <div class="card-header text-darker">{{$add->title}}</div>
+        <div class="card-body d-flex align-items-center justify-content-between text-darker">
+            <div>
                 {{$add->description}}
-            </p>
+            </div>
+            <div class="">
+                <img src="https://via.placeholder.com/300x150" class="rounded float-end" alt="">
+            </div>
         </div>
-        <div class="card-footer d-flex justify-content-between">
-            <strong>Category: 
-                <a href="{{route('public.adds.category', [
-                    $add->category->name,
-                    $add->category->id
-                    ])}}">{{$add->category->name}}</a>
-            </strong>
-            <i>{{$add->created_at->format('d/m/Y')}} - {{$add->user->name}}</i>
+        <div class="card-footer text-darker d-flex justify-content-start">
+                <strong class="text-darker">Categoria:&nbsp&nbsp
+                    <a href="{{route('public.adds.category', [
+                        $add->category->name,
+                        $add->category->id
+                        ])}}"> {{$add->category->name}}</a></strong>
+            <div class="ms-auto">
+                <i>{{$add->created_at->format('d/m/Y')}} - {{$add->user->name}}</i>
+            </div>
         </div>
     </div>
 </div>

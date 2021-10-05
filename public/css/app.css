@@ -11316,11 +11316,15 @@ h1,h2,h3{
 }
 
 .border-sec {
-    border: 2px solid var(--sec)
+    border: 2px solid var(--sec);
 }
 
 .text-darker {
-    color: var(--darker)
+    color: var(--darker) !important;
+}
+
+a{
+    text-decoration: none !important;
 }
 
 .bg-darker {
@@ -11328,11 +11332,11 @@ h1,h2,h3{
 }
 
 .border-darker {
-    border: 2px solid var(--darker)
+    border: 2px solid var(--darker);
 }
 
 .text-blue {
-    color: var(--blue)
+    color: var(--blue);
 }
 
 .bg-blue {
@@ -11340,17 +11344,19 @@ h1,h2,h3{
 }
 
 .border-blue {
-    border: 2px solid var(--blue)
+    border: 2px solid var(--blue);
 }
 
 /* Home Header */
-.home-header {
-    height: 100%;
+/* .home-header {
+    height: 100vh;
     width: 100%;
     padding: 0 8%;
     background-color: var(--sec);
-}
+} */
 
+
+/* Navbar2 */
 .nav-el {
     padding: 28px 0;
 }
@@ -11390,11 +11396,11 @@ h1,h2,h3{
     cursor: pointer !important;
 }
 
-.content {
+/* .content {
     position: absolute;
     left: 50%;
     
-}
+} */
 
 /* .home-header {
     height: 60vh;
@@ -11432,6 +11438,11 @@ h1,h2,h3{
     color: var(--blue);
 } */
 
+
+.swiper {
+    width: 300px;
+    height: 150px;
+}
 
 
 
