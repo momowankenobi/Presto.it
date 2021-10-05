@@ -6,19 +6,25 @@
         </div>
     @endif
     
- {{-- <div class="container vh-100">
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <h1 class="text-center my-5 display-4" id="benvenuti">Benvenuto/a, </h1>
-                <h2>Cosa stai cercando oggi?</h2>
-                <form action="">
-                    <input type="text" placeholder="Trova annuncio">
-                    <button type="submit">Cerca</button>
-                </form>
-
+    <div class="container-fluid vh-100 d-flex justify-content-center">
+        <div class="row vh-100 justify-content-center align-items-center">
+            <div class="col-12 col-md-6">
+                <img src="/img/discountsale.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="col-12">
+                    <h1 class="text-center my-5 display-4" id="benvenuti">Presto.it</h1>
+                </div>
+                <div class="col-12">
+                    <h2>Cosa stai cercando oggi?</h2>
+                    <form action="">
+                        <input style="width: 80%" type="text" placeholder="Trova annuncio">
+                        <button type="submit">Cerca</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
     <h1 class="text-center my-5">Benvenuto</h1>
 
