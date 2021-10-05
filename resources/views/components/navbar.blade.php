@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent" aria-label="Ninth navbar example">
-    <div class="container-xl">
-      <a href="{{route('home')}}">
-        <img src="../../../public/img/Presto.png" alt="">
-      </a>
-      <a class="navbar-brand" href="{{route('home')}}">Container XL</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample07XL">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-=======
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
   <div class="container-xl">
     <a class="navbar-brand" href="#">Presto.it</a>
@@ -24,7 +10,6 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
         </li>
         @auth
->>>>>>> 30dd2dcb2fe434b5f5658c4dad744e0fc8a2e809
           <li class="nav-item">
             <a class="nav-link" href="{{route('articleNew')}}">Crea annuncio</a>
           </li>
