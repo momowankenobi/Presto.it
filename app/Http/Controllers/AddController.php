@@ -19,7 +19,8 @@ class AddController extends Controller
     public function store(Request $request){
         $add = Add::create([
             'title'=>$request->title,
-            'description'=>$request->description
+            'description'=>$request->description,
+            'price'=>$request->price
         ]);
         $add->category()->associate($request->category);
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');

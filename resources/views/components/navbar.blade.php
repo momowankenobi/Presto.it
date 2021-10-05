@@ -14,6 +14,19 @@
             <a class="nav-link" href="{{route('articleNew')}}">Crea annuncio</a>
           </li>
         @endauth
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
+          <ul class="dropdown-menu">
+           @foreach ($categories as $category)
+           <li>
+            <a href="{{route('public.adds.category', [
+              $category->name,
+              $category->id
+          ])}}">{{$category->name}}</a>
+           </li>
+            @endforeach
+          </ul>
+        </li>
       </ul>
       <div>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
