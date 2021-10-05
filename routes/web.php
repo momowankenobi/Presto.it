@@ -19,4 +19,6 @@ Route::get('/', [PublicController::class, 'home']) ->name('home'); //Homepage
 Route::get('/article/form', [AddController::class, 'new'])->name('articleNew'); //Form
 Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store'); //Ricezione dati dal form e invio sul database
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
+Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //Articoli per Categorie 
+
 

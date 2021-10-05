@@ -25,4 +25,7 @@ class AddController extends Controller
         $add->category()->associate($request->category);
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
     }
+    public function show(Add $add){
+        return view('show', compact('add'));
+    }
 }

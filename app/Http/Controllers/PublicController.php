@@ -14,12 +14,11 @@ class PublicController extends Controller
 
     } 
 
-     public function categoryList($name, $category_id){
+    public function categoryList($name, $category_id){
         $category = Category::find($category_id);
         $adds = $category->adds()->orderBy('created_at', 'desc')->paginate(5);
         return view('category', compact('category','adds'));
-     }
-
+    }
 
 }
 
