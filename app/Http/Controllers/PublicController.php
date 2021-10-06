@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function home(){
-        $adds = Add::orderBy('created_at', 'desc')->take(5)->get();
+        $adds = Add::orderBy('created_at', 'desc')->paginate(5);
         return view('home', compact('adds'));
 
     } 

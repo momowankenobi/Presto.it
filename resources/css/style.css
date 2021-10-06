@@ -97,8 +97,8 @@ a{
 }
 
 /* Altezza e larghezza div */
-.vh-65 {
-    height: 65vh;
+.vh-75 {
+    height: 75vh;
 }
 
 .vw-80 {
@@ -107,7 +107,7 @@ a{
 
 /* logo */
 .logo-nav {
-    height: 150px;
+    height: 50px;
 }
 
 .logo-header {
@@ -162,7 +162,11 @@ a{
 }
 
 /* Search */
-
+.searchContain{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
 .tb
 {
     display: table;
@@ -175,10 +179,10 @@ a{
     vertical-align: middle;
 }
 
-input, button
+.buttonInput, .buttonSearch
 {
     color: #fff;
-    font-family: Nunito;
+    /* font-family: Nunito; */
     padding: 0;
     margin: 0;
     border: 0;
@@ -192,20 +196,19 @@ input, button
     left: 0; */
     right: 0;
     width: 750px;
-    padding: 35px;
-    margin: -83px auto 0 auto;
+    padding: 20px;
     background-color: #ff7575;
     border-radius: 20px;
     box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
     transform: scale(0.6);
 }
 
-form
+.formSearch
 {
     height: 96px;
 }
 
-input[type="text"]
+.buttonInput[type="text"]
 {
     width: 100%;
     height: 96px;
@@ -213,7 +216,7 @@ input[type="text"]
     line-height: 1;
 }
 
-input[type="text"]::placeholder
+.buttonInput[type="text"]::placeholder
 {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
@@ -226,7 +229,7 @@ input[type="text"]::placeholder
     padding-left: 35px;
 }
 
-button
+.buttonSearch
 {
     position: relative;
     display: block;
@@ -250,7 +253,7 @@ button
     transition: 0.5s ease all;
 }
 
-button span
+.buttonSpan
 {
     position: absolute;
     top: 68px;
@@ -264,7 +267,7 @@ button span
     transition: 0.5s ease all;
 }
 
-button span:before, button span:after
+.buttonSpan:before, .buttonSpan:after
 {
     content: '';
     position: absolute;
@@ -288,7 +291,7 @@ button span:before, button span:after
     border-radius: 20px;
 }
 
-#s-cover:hover span
+#s-cover:hover .buttonSpan
 {
     top: 50%;
     left: 56px;
@@ -297,45 +300,28 @@ button span:before, button span:after
     transform: rotateZ(0);
 }
 
-#s-cover:hover button span:before
+#s-cover:hover .buttonSpan:before
 {
     bottom: 11px;
     transform: rotateZ(52deg);
 }
 
-#s-cover:hover button span:after
+#s-cover:hover .buttonSpan:after
 {
     bottom: -11px;
     transform: rotateZ(-52deg);
 }
-#s-cover:hover button span:before, #s-cover:hover button span:after
+#s-cover:hover .buttonSpan:before, #s-cover:hover .buttonSpan:after
 {
     right: -6px;
     width: 40px;
     background-color: #fff;
 }
 
-#ytd-url {
-  display: block;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 10px 14px;
-  margin: 20px;
-  color: #fff;
-  font-family: Nunito;
-  font-size: 14px;
-  text-decoration: none;
-  background-color: #ff7575;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-  z-index: 125;
-}
-
 /* categoryList */
 .categoryList {
     position: relative;
-    height: 150px;
+    height: auto;
     top: -75px;
     box-shadow: 15px 15px 10px gray;
     border-radius: 20px;

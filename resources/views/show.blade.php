@@ -5,9 +5,17 @@
             <div class="col-10 col-md-8">
                 <div class="card">
                     <div class="card-header">{{$add->title}}</div>
-                    <div class="card-body d-flex align-items-center justify-content-between">
-                        <div>
-                            {{$add->description}}
+                    <div class="card-body d-flex  align-items-center justify-content-between">
+                        <div class="d-flex-column pe-3">
+                            <div>
+                                {{$add->description}}
+                            </div>
+                            <div>
+                                <b>€{{$add->price}}</b>
+                            </div>
+                            <div class="text-end">
+                                <a href="{{route('home')}}" class="btn btn-primary">Torna alla home</a>
+                            </div>
                         </div>
                         <div>
                             <!-- Slider main container -->

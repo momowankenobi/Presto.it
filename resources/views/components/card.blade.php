@@ -3,7 +3,7 @@
         <div class="card-header text-sec bg-red fw-bold">{{$add->title}}</div>
         <div class="card-body d-flex align-items-center justify-content-between text-dark">
             <div>
-                {{$add->description}}
+                <b class="fs-3">€{{$add->price}}</b>
             </div>
             <div class="">
                 <img src="https://via.placeholder.com/300x150" class="rounded float-end" alt="">

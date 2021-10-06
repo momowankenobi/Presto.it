@@ -21,7 +21,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Categorie</label>
-                        <select name="category">
+                        <select name="category" style="width: 100%">
                             <option value=""></option>
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Prezzo</label>
-                        <input name="price" type="number" value="{{old('price')}}">
+                        <input class="form-control" name="price" type="number" value="{{old('price')}}">
                     </div>
                     <div class="form mb-3">
                         <label class="form-label">Descrizione prodotto</label>

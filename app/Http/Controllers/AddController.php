@@ -17,12 +17,12 @@ class AddController extends Controller
         return view('form', compact('categories'));
     }
     public function store(Request $request){
-        $add = Add::create([
+        $add = Auth::user()->adds()->create([
             'title'=>$request->title,
             'description'=>$request->description,
-            'price'=>$request->price
+            'price'=>$request->price,
+            'category_id'=>$request->category
         ]);
-        $add->category()->associate($request->category);
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
     }
     public function show(Add $add){

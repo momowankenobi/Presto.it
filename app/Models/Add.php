@@ -12,8 +12,10 @@ class Add extends Model
     protected $fillable = [
         'title',
         'description',
-        'price'
+        'price',
+        'category_id'
     ];
+    
     public function category(){
         return $this->belongsTo(Category::class);
     }
