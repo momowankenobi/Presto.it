@@ -28,6 +28,15 @@
       </ul>
       <div>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            @if (Auth::user()->is_revisor)
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('revisor.home')}}">
+                  Revisor Home
+                  <span class="badge badge-pill bg-warning">{{App\Models\Add::ToBeRevisionedCount()}}</span>
+              </a>
+            </li>
+
+            @endif
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
                   @auth
