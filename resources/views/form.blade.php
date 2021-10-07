@@ -1,4 +1,6 @@
 <x-layout>
+    <x-slot name="title">Nuovo annuncio</x-slot>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -8,8 +10,7 @@
             </ul>
         </div>
     @endif
-    <x-slot name='title'>Nuovo Articolo</x-slot>
-    <h1 class="text-center my-5 display-4">Nuovo Articolo</h1>
+    <h1 class="text-center my-5 display-4">Nuovo Annuncio</h1>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">
