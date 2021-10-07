@@ -326,3 +326,13 @@ a{
     box-shadow: 15px 15px 10px gray;
     border-radius: 20px;
 }
+
+
+@media screen and (max-width: 768px) {
+    .vh-75{
+        height: 100vh;
+    }
+    .categoryList{
+        top: -50px;
+    }
+}

@@ -21,6 +21,11 @@
 
 
 
+
+    <div class="mt-3">
+        <x-footer/>
+    </div>
+
     {{-- Swiper JS --}}
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     {{$script ?? ''}}

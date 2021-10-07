@@ -11,17 +11,16 @@ class RevisorController extends Controller
         $this->middleware('auth.revisor');
     } 
    
-    public function index()
-    {
+    public function showadd(){
         $add=Add::where('is_accepted',null)->orderBy('created_at','desc')->first();
-        return view('revisor.home',compact('add'));
+        return view('admin.showadd',compact('add'));
     }
    
     private function setAccept($add_id, $value){
         $add=Add::find($add_id);
         $add->is_accepted=$value;
         $add->save();
-        return redirect(route('revisor.home'));
+        return redirect(route('admin.showadd'));
     }
     
     public function accept($add_id){

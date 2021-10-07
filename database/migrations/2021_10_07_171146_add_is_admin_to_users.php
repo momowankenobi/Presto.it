@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddVisibleToAdds extends Migration
+class AddIsAdminToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddVisibleToAdds extends Migration
      */
     public function up()
     {
-        Schema::table('adds', function (Blueprint $table) {
-            $table->boolean('visible')->default(true);
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_admin')->default(false);
         });
     }
 
@@ -25,8 +25,8 @@ class AddVisibleToAdds extends Migration
      */
     public function down()
     {
-        Schema::table('adds', function (Blueprint $table) {
-            $table->dropColumn('visible');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_admin');
         });
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AddController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,13 @@ Route::post('/article/form/submit', [AddController::class, 'store'])->name('arti
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
 Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.home');
-Route::post('/revisor/home/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept');
-Route::post('/revisor/home/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
 Route::get('/search', [AddController::class, 'search'])->name('search');
+Route::get('/administration/panelcontrol', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd');
+Route::post('/administration/panelcontrol/adds/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept');
+Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
+Route::get('/administration/panelcontrol/revisors', [AdminController::class, 'showrev'])->name('admin.showrev');
+Route::post('/administration/panelcontrol/revisors/{id}/accept',[AdminController::class, 'accept'])->name('admin.accept');
+Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController::class, 'reject'])->name('admin.reject');
+
 

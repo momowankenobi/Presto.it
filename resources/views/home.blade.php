@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                         {{-- <h1 class="text-center my-5 display-1 fw-bold text-blue" id="benvenuti">Presto.it</h1> --}}
-                        <div class="col-12 d-flex justify-content-center">
+                        <div class="col-12  d-flex justify-content-center">
                             <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
                         </div>
                         <div class="col-12 d-flex justify-content-center">
@@ -73,8 +73,13 @@
         </div>
     </div>
 
+    
+
 
     <div class="container">
+        <div class="row justify-content-center">
+            <h1 class="text-center display-4">Il miglior sito di annunci!</h1>
+        </div>
         <div class="row justify-content-center">
             @foreach ($adds as $add)
                 <div class="my-3 d-flex justify-content-center">
