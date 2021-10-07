@@ -20,7 +20,7 @@ class Add extends Model
             'id' => $this->id,            
             'title' => $this->title,
             'description' => $this->description,                            
-            'categories'=>$categories,
+            'categories'=> $this->category->name,
     ];
 
         // Customize the data array...
