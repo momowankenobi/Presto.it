@@ -3,18 +3,18 @@
   @if ($add)
   <div class="container">
       <div class="row justify-content-center mt-3">
-          <div class="col-8">
+          <div class="col-12">
               @include('components.card')
           </div>
       </div>
       <div class="row justify-content-center my-5">
-          <div class="col-3">
+          <div class="col-3 ms-auto">
               <form method="POST" action="{{route('revisor.accept', with($add->id))}}" >
                   @csrf
                   <button class="btn btn-success" type="submit">Accetta</button>
               </form>
           </div>
-          <div class="col-3 text-end">
+          <div class="col-3 text-end me-auto">
               <form method="POST" action="{{route('revisor.reject', with($add->id))}}" >
                   @csrf
                   <button class="btn btn-danger" type="submit">Rifiuta</button>

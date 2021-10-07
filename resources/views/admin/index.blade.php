@@ -22,7 +22,9 @@
               <td>{{$user->id}}</td>
               <td>{{$user->name}}</td>
               <td>{{$user->email}}</td>
-              @if($user->is_revisor)
+              @if($user->is_admin)
+                  <td>Amministratore</td>
+              @elseif ($user->is_revisor)
                   <td>Revisore</td>
               @else
                   <td>Utente</td>
