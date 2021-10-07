@@ -18,10 +18,8 @@ class RevisorMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-       if (Auth::user() && Auth::user()->is_revisor)
-       {
+       if (Auth::user() && Auth::user()->is_revisor){
            return $next($request);
-
        }
        return redirect(route('home'))->with('access.denied.revisor.only','access denied');
     }
