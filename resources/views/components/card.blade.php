@@ -1,5 +1,5 @@
-<div class="col-10 col-md-8">
-    <div class="card" onclick="{{route('add.show', compact('add'))}}">
+<div class="col-12 d-flex justify-content-evenly mt-5">
+    <div class="card" style="width: 100%" onclick="{{route('add.show', compact('add'))}}">
         <div class="card-header text-sec bg-red fw-bold">{{$add->title}}</div>
         <div class="card-body d-flex align-items-center justify-content-between text-dark">
             <div>
