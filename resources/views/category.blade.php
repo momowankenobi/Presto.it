@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             @foreach ($adds as $add)
                 @include('components.card')    
-            @endforeach
+            @endforeach       
         </div>
     </div>
 

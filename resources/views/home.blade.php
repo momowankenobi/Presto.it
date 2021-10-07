@@ -17,7 +17,7 @@
                         <div class="col-12 d-flex justify-content-center">
                             <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 d-flex justify-content-center">
                             <div class="searchContain">
                                 <div class="mt-3" id="cover">
                                     <form method="get" class="formSearch" action="{{route('search')}}">
