@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AddController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');   
+        $this->middleware('auth')->except('search');   
     }
     public function new() {
         $categories = Category::all();
@@ -27,5 +27,11 @@ class AddController extends Controller
     }
     public function show(Add $add){
         return view('show', compact('add'));
+    }
+
+    public function search(Request $request){
+        $q = $request->input('q');
+        $adds = Add::search($q)->get();
+        return view ('search', compact('q', 'adds'));
     }
 }

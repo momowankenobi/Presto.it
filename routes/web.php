@@ -24,5 +24,5 @@ Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.sho
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.home');
 Route::post('/revisor/home/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('/revisor/home/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
-
+Route::get('/search', [AddController::class, 'search'])->name('search');
 
