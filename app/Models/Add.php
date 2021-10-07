@@ -13,18 +13,14 @@ class Add extends Model
     use HasFactory;
     use Searchable;
 
-    public function toSearchableArray()
-    {
-        $categories = Category::pluck('name')->join(', ');
-        $array =[ 
+    public function toSearchableArray(){
+        // $categories = $this->category->pluck('category_id')->join(', ');
+        $array = [ 
             'id' => $this->id,            
             'title' => $this->title,
-            'description' => $this->description,                            
-            'categories'=>$categories,
-    ];
-
-        // Customize the data array...
-
+            'description' => $this->description,   
+            'category'=>$this->category->name
+        ];
         return $array;
     }
     
