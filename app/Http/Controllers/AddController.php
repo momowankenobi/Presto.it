@@ -31,7 +31,7 @@ class AddController extends Controller
 
     public function search(Request $request){
         $q = $request->input('q');
-        $adds = Add::search($q)->get();
+        $adds = Add::search($q)->where('is_accepted', true)->get();
         return view ('search', compact('q', 'adds'));
     }
 }

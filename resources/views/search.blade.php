@@ -24,13 +24,9 @@
   </div>
   <div class="container">
     <div class="row justify-content-center">
-      @if($adds)
         @foreach($adds as $add)
             @include('components.card')
         @endforeach
-      @else
-        <h3>Non è presente alcun risultato.</h3>
-      @endif
     </div>
   </div>
 </x-layout>   
