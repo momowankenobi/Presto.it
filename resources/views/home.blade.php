@@ -17,12 +17,12 @@
                         <div class="col-12 d-flex justify-content-center">
                             <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
                         </div>
-                        {{-- <div class="col-12">
+                        <div class="col-12">
                             <div class="searchContain">
                                 <div class="mt-3" id="cover">
-                                    <form method="get" class="formSearch" action="">
+                                    <form method="get" class="formSearch" action="{{route('search')}}">
                                       <div class="tb">
-                                        <div class="td"><input class="buttonInput" type="text" placeholder="Cosa stai cercando oggi?" required></div>
+                                        <div class="td"><input class="buttonInput" name="q" type="text" placeholder="Cosa stai cercando oggi?" required></div>
                                         <div class="td" id="s-cover">
                                           <button class="buttonSearch" type="submit">
                                             <div id="s-circle"></div>
@@ -33,7 +33,7 @@
                                     </form>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                 </div>    
             </div>
         </div>

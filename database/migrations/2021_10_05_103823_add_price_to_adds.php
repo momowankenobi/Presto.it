@@ -14,7 +14,7 @@ class AddPriceToAdds extends Migration
     public function up()
     {
         Schema::table('adds', function (Blueprint $table) {
-            $table->string('price')->after('title')->default('€0.00');
+            $table->string('price')->after('title')->default('0.00');
         });
     }
 
