@@ -11,7 +11,9 @@
         "laravel/fortify": "^1.8",
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/scout": "^9.3",
+        "laravel/tinker": "^2.5",
+        "teamtnt/laravel-scout-tntsearch-driver": "^11.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

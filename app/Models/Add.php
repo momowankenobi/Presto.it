@@ -2,13 +2,32 @@
 
 namespace App\Models;
 
+use App\Models\Category;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Add extends Model
 {
     use HasFactory;
+    use Searchable;
+
+    public function toSearchableArray()
+    {
+        $categories = Category::pluck('name')->join(', ');
+        $array =[ 
+            'id' => $this->id,            
+            'title' => $this->title,
+            'description' => $this->description,                            
+            'categories'=>$categories,
+    ];
+
+        // Customize the data array...
+
+        return $array;
+    }
+    
     protected $fillable = [
         'title',
         'description',
