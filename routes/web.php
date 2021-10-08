@@ -23,7 +23,7 @@ Route::post('/article/form/submit', [AddController::class, 'store'])->name('arti
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
 Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
 Route::get('/search', [AddController::class, 'search'])->name('search'); //Search
-Route::get('/administration/panelcontrol', [AdminController::class, 'index'])->name('admin.index'); //Pannello di controllo
+Route::get('/administration/panelcontrol', [RevisorController::class, 'index'])->name('admin.index'); //Pannello di controllo
 Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd'); //Pannello di controllo vista annunci
 Route::post('/administration/panelcontrol/adds/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept'); //Pannello di controllo vista annunci bottone accetta
 Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject'); //Pannello di controllo vista annunci bottone rifiuta

@@ -1,6 +1,13 @@
 @auth
 <x-adminlayout>
   <x-slot name="title">Dashboard - Presto.it</x-slot>
+  <x-slot name="style">
+    <style>
+      *{
+        color: white;
+      }
+    </style>
+  </x-slot>
     <div class="my-4">
       <h1>Dashboard</h1>
     </div>
@@ -13,7 +20,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome Utente</th>
             <th scope="col">Email</th>
-            <th scope="col">Revisore</th>
+            <th scope="col">Ruolo</th>
             <th scope="col">Creazione Account</th>
           </tr>
         </thead>

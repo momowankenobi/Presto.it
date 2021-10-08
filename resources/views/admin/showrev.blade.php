@@ -1,5 +1,12 @@
 <x-adminlayout>
     <x-slot name="title">Utenti Revisori - Presto.it</x-slot>
+    <x-slot name="style">
+        <style>
+          *{
+            color: white;
+          }
+        </style>
+    </x-slot>
   @if($user)
       <div class="container">
           <div class="row justify-content-center mt-3">

@@ -14,6 +14,11 @@ class RevisorController extends Controller
         $this->middleware('auth.revisor');
     }
 
+    public function index(){
+        $users = User::orderBy('created_at', 'desc')->get();
+        $adds = Add::orderBy('created_at', 'desc')->get();
+        return view('admin.index', compact('users', 'adds'));
+    }
     
     public function showadd(){
         $add=Add::where('is_accepted',null)->orderBy('created_at','desc')->first();

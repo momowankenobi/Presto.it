@@ -9,15 +9,9 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth.admin')->except('index');
+        $this->middleware('auth.admin');
     }
     
-    public function index(){
-        $users = User::orderBy('created_at', 'desc')->get();
-        $adds = Add::orderBy('created_at', 'desc')->get();
-        return view('admin.index', compact('users', 'adds'));
-    }
-
     public function showrev(){
         $user = User::where('is_revisor',null)->orderBy('created_at','desc')->first();
         return view('admin.showrev',compact('user'));
