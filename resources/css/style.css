@@ -42,9 +42,20 @@ h1,h2,h3{
     -webkit-backdrop-filter: blur(20px);
 }
 .logoDiv{
-    padding: 5px;
-    width: 50px !important;
-    transform: rotate(-85deg);
+    width: 30px !important;
+    transform: rotate(-75deg);
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-100deg);
+    }
+    100% {
+        transform: rotate(-75deg);
+    }
 }
 
 .text-main {
@@ -414,13 +425,13 @@ a{
     width: 100%;
     color: #fff;
     border-radius: 0 0 8px 8px;
+    animation: ease-in-out 0.5s;
 }
 
 .card-button:hover {
     text-decoration: none;
     opacity: 0.8;
     color: #fff;
-
 }
 
 @media screen and (max-width: 768px) {
