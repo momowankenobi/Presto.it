@@ -43,39 +43,18 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="justify-content-evenly col-10 row bg-sec p-4 categoryList">
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-darker">
-                    <i class="fas fa-car fa-5x"></i>
+                @foreach ($categories as $category)
+                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 {{$category->color}}">
+                    <a class="anchorCustom" href="{{route('public.adds.category', [$category->name, $category->id])}}">
+                        <i class="{{$category->icon}}"></i>
+                    </a>
                 </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-danger">
-                    <i class="fas fa-laptop-code fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-warning">
-                    <i class="fas fa-blender fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-info">
-                    <i class="fas fa-book fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-main">
-                    <i class="fas fa-gamepad fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-blue">
-                    <i class="fas fa-basketball-ball fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-red">
-                    <i class="fas fa-house-user fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-accent">
-                    <i class="fas fa-mobile-alt fa-5x"></i>
-                </div>
-                <div class="col-4 my-2 my-xl-0 d-flex justify-content-center align-items-center col-xl-1 text-success">
-                    <i class="fas fa-chair fa-5x"></i>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 
     {{-- annunci old --}}
-
     {{-- <div class="card-block" onclick="{{route('add.show', compact('add'))}}">
         <div class="image-block">
             <div class="image-block__wrapper">
@@ -136,13 +115,8 @@
         </div>
         <div class="row justify-content-center">
             @foreach ($adds as $add)
-                <div class="my-3 d-flex justify-content-center">
-                    <a href="{{route('add.show', compact('add'))}}">
-                        @include('components.card')
-                    </a>
-                </div>
+                @include('components.card')
             @endforeach
-            
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-center">

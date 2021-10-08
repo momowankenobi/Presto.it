@@ -6,8 +6,25 @@
 h1,h2,h3{
     font-family: 'Open Sans', sans-serif;
 }
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
 
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
 
+#footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;   /* Footer height */
+}
+
+#sidebarMenu{
+    min-height: 100vh;
+}
 
 :root{
 
@@ -145,7 +162,6 @@ a{
 .nav-el li a:hover::after {
     width: 100%;
 }
-
 .btn-newadd {
     background: var(--main);
     color: white !important;
@@ -153,12 +169,19 @@ a{
     border-radius: 3px !important;
     cursor: pointer !important;
 }
-
+.anchorCustom{ 
+    color: inherit;
+    transition: linear 0.2s;
+}
+.anchorCustom:hover{
+    color: inherit;
+    transform: translate(0%, -20%);
+}
 
 /* Swiper */
 .swiper {
-    width: 300px;
-    height: 150px;
+    width: auto;
+    height: auto;
 }
 
 /* Search */
@@ -336,3 +359,67 @@ a{
         top: -50px;
     }
 }
+
+
+    /* Card Styles */
+
+    .card-sl {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-image {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 8px 8px 0px 0;
+    }
+
+    .card-action {
+        position: relative;
+        float: right;
+        margin-top: -25px;
+        margin-right: 20px;
+        z-index: 2;
+        color: #E26D5C;
+        background: #fff;
+        border-radius: 100%;
+        padding: 15px;
+        font-size: 15px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .card-action:hover {
+        color: #fff;
+        background: #E26D5C;
+        animation: pulse 1.5s infinite;
+    }
+
+    .card-heading {
+        font-size: 18px;
+        font-weight: bold;
+        background: #fff;
+        padding: 10px 15px;
+    }
+
+    .card-text {
+        padding: 10px 15px;
+        background: #fff;
+        font-size: 14px;
+        color: #636262;
+    }
+
+    .card-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        width: 100%;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .card-button:hover {
+        text-decoration: none;
+        opacity: 0.8;
+        color: #fff;
+
+    }

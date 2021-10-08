@@ -52,28 +52,27 @@
     <div class="container py-5">
         <div class="row justify-content-center">
             <h1 class="text-center display-4">Il miglior sito di annunci!</h1>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-4">
                 <div class="card-sl">
-                    <div class="swiper rounded">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide"><img src="https://picsum.photos/900/450" class="" alt=""></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/900/450" class="" alt=""></div>
-                        <div class="swiper-slide"><img src="https://picsum.photos/900/450" class="" alt=""></div>
+                    <div class="card-image">
+                        <div class="swiper rounded">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
+                            <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
+                            <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+                        
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-                    
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
                     </div>
                     <div class="card-heading">
                         <a href="{{route('add.show', compact('add'))}}">{{$add->title}}</a>
-                    </div>
-                    <div>
-                        {{$add->description}}
                     </div>
                     <div class="card-text">
                         <b class="fs-3">€{{$add->price}}</b>
@@ -84,14 +83,14 @@
                                 $add->category->name,
                                 $add->category->id
                                 ])}}"> {{$add->category->name}}</a></strong>
-                        <div class="ms-auto">
-                            <i>{{$add->created_at->format('d/m/Y')}} - {{$add->user->name}}</i>
-                        </div>
+                    <div class="ms-auto d-flex flex-column">
+                        <p class="m-0 text-muted text-end">{{$add->created_at->format('d/m/Y')}}</p>
+                        <p class="m-0">{{$add->user->name}}</p>
                     </div>
-                    <a href="{{route('home')}}" class="card-button">Torna alla Home</a>
-                </div> 
-        </div>
-         
+                    </div>
+                    <a href="{{route('home')}}" class="card-button {{$add->category->bgcolor}}">Torna alla homepage</a>
+                </div>
+            </div>  
         </div>
     </div>
 

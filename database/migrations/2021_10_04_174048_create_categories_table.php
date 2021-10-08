@@ -17,14 +17,11 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('bgcolor');
+            $table->string('color');
+            $table->string('icon');
             $table->timestamps();
         });
-        $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefonia', 'Arredamento'];
-        foreach ($categories as $category) {
-            $c = new Category();
-            $c->name = $category;
-            $c->save();
-        }
     }
 
 

@@ -1,4 +1,4 @@
-<div class="container-fluid mt-auto">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12 col-md-6 bg-main p-3 d-flex flex-column justify-content-around align-items-center">
             <div class="w-100 p-4 text-center">
@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="w-75 text-center">
-                <a href="">Lavora con noi!</a>
+                {{-- <a class="text-darker" href="{{route('work.index')}}">Lavora con noi!</a> --}}
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit repellat accusamus doloremque
                     facere ex adipisci!.</p>
             </div>

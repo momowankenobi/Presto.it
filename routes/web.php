@@ -22,14 +22,14 @@ Route::get('/article/form', [AddController::class, 'new'])->name('articleNew'); 
 Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store'); //Ricezione dati dal form e invio sul database
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
 Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.home');
-Route::get('/search', [AddController::class, 'search'])->name('search');
-Route::get('/administration/panelcontrol', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd');
-Route::post('/administration/panelcontrol/adds/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept');
-Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject');
-Route::get('/administration/panelcontrol/revisors', [AdminController::class, 'showrev'])->name('admin.showrev');
-Route::post('/administration/panelcontrol/revisors/{id}/accept',[AdminController::class, 'accept'])->name('admin.accept');
-Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController::class, 'reject'])->name('admin.reject');
-
+Route::get('/search', [AddController::class, 'search'])->name('search'); //Search
+Route::get('/administration/panelcontrol', [AdminController::class, 'index'])->name('admin.index'); //Pannello di controllo
+Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd'); //Pannello di controllo vista annunci
+Route::post('/administration/panelcontrol/adds/{id}/accept',[RevisorController::class, 'accept'])->name('revisor.accept'); //Pannello di controllo vista annunci bottone accetta
+Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::class, 'reject'])->name('revisor.reject'); //Pannello di controllo vista annunci bottone rifiuta
+Route::get('/administration/panelcontrol/revisors', [AdminController::class, 'showrev'])->name('admin.showrev'); //Pannello di controllo vista revisori
+Route::post('/administration/panelcontrol/revisors/{id}/accept',[AdminController::class, 'accept'])->name('admin.accept'); //Pannello di controllo vista revisori bottone accetta
+Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController::class, 'reject'])->name('admin.reject'); //Pannello di controllo vista revisori bottone rifiuta
+// Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index'); //Lavora con noi
+// Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit');
 

@@ -3,7 +3,7 @@
   @if ($add)
   <div class="container">
       <div class="row justify-content-center mt-3">
-          <div class="col-12">
+          <div class="d-flex justify-content-center">
               @include('components.card')
           </div>
       </div>
