@@ -88,7 +88,7 @@
                         <p class="m-0">{{$add->user->name}}</p>
                     </div>
                     </div>
-                    <a href="{{route('home')}}" class="card-button {{$add->category->bgcolor}}">Torna alla homepage</a>
+                    <a href="{{URL::previous()}}" class="card-button {{$add->category->bgcolor}}">Torna indietro</a>
                 </div>
             </div>  
         </div>

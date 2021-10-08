@@ -1,3 +1,4 @@
+@auth
 <x-adminlayout>
   <x-slot name="title">Dashboard - Presto.it</x-slot>
     <div class="my-4">
@@ -62,4 +63,5 @@
         </tbody>
       </table>
       </div>
-</x-adminlayout>
+</x-adminlayout>   
+@endauth

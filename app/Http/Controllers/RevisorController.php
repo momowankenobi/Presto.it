@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Add;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -12,6 +13,8 @@ class RevisorController extends Controller
     public function __construct(){
         $this->middleware('auth.revisor');
     }
+
+    
     public function showadd(){
         $add=Add::where('is_accepted',null)->orderBy('created_at','desc')->first();
         return view('admin.showadd',compact('add'));

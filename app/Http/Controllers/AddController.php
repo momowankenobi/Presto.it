@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AddController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth')->except('search');   
+        $this->middleware('auth')->except('search', 'show');   
     }
     public function new() {
         $categories = Category::all();
