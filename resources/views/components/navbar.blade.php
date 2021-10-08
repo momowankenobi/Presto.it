@@ -45,9 +45,9 @@
               <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
                   @auth
                       @if(Auth::user()->is_admin)
-                        Benvenuto, {{Auth::user()->name}} <span class="badge badge-pill bg-danger"> {{$counttot}}</span>
+                        Benvenuto, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$counttot}}</span>
                       @elseif(Auth::user()->is_revisor)
-                        Benvenuto, {{Auth::user()->name}} <span class="badge badge-pill bg-danger"> {{$countadd}}</span>
+                        Benvenuto, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$countadd}}</span>
                       @else                     
                         Benvenuto, {{Auth::user()->name}}
                       @endif
@@ -61,9 +61,9 @@
                   <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
                 @else
                 @if(Auth::user()->is_admin)
-                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge badge-pill bg-danger">{{$counttot}}</span></a></li>
+                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge rounded-circle bg-danger">{{$counttot}}</span></a></li>
                     @elseif(Auth::user()->is_revisor)
-                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge badge-pill bg-danger">{{$countadd}}</span></a></li>
+                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge rounded-circle bg-danger">{{$countadd}}</span></a></li>
                     @endif
                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
