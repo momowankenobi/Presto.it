@@ -19,7 +19,7 @@
     <x-adminnavbar/>
         <div class="container-fluid vh-75">
           <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse vh-75">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse vh-100 sticky-top">
               <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                   <li class="nav-item">

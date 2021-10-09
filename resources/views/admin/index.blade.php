@@ -53,6 +53,7 @@
             <th scope="col">Titolo Annuncio</th>
             <th scope="col">Prezzo Annuncio</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Stato revisione</th>
             <th scope="col">Creazione Annuncio</th>
           </tr>
         </thead>
@@ -63,6 +64,13 @@
               <td>{{$add->title}}</td>
               <td>{{$add->price}}</td>
               <td>{{$add->category->name}}</td>
+              @if($add->is_accepted === 1)
+                  <td>Accettato</td>
+              @elseif ($add->is_accepted === 0)
+                  <td>Rifiutato</td>
+              @else
+                  <td>Da revisionare</td>
+              @endif
               <td>{{$add->created_at}}</td>
           </tr>
           @endforeach
