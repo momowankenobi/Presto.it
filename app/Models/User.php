@@ -46,4 +46,8 @@ class User extends Authenticatable
         return $this->hasMany(Add::class);
     }
 
+    static public function ToBeRevisionedCount(){
+        return User::where('is_revisor',null)->count();
+    }
+
 }

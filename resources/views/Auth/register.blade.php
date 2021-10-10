@@ -1,4 +1,5 @@
 <x-layout>
+  <x-slot name='title'>Registrati</x-slot>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -7,8 +8,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
-    <x-slot name='title'>Registrati</x-slot>
+    @endif    
     <h1 class="text-center my-5 display-4">Registrati</h1>
     <div class="container">
         <div class="row justify-content-center">

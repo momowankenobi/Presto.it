@@ -2,13 +2,6 @@
 *{
     font-family: 'Lato', sans-serif;
 }
-
-h1,h2,h3{
-    font-family: 'Open Sans', sans-serif;
-}
-
-
-
 :root{
 
     /* --main: #66FCF1; */
@@ -18,6 +11,51 @@ h1,h2,h3{
     --blue: #45A29E;
     --accent: #B4B9FD;
     --red: #ff7575;
+}
+
+h1,h2,h3{
+    font-family: 'Open Sans', sans-serif;
+}
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;   /* Footer height */
+}
+
+#sidebarMenu{
+    background-color: rgba(16 18 27 / 40%);
+    height: 100%;
+    padding-bottom: 800px;
+	margin-bottom: -800px;
+    z-index: 1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.logoDiv{
+    width: 30px !important;
+    transform: rotate(-75deg);
+    animation: slideInFromLeft 1.5s ease-in-out;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-100deg);
+    }
+    100% {
+        transform: rotate(-75deg);
+    }
 }
 
 .text-main {
@@ -145,7 +183,6 @@ a{
 .nav-el li a:hover::after {
     width: 100%;
 }
-
 .btn-newadd {
     background: var(--main);
     color: white !important;
@@ -153,12 +190,19 @@ a{
     border-radius: 3px !important;
     cursor: pointer !important;
 }
-
+.anchorCustom{ 
+    color: inherit;
+    transition: linear 0.2s;
+}
+.anchorCustom:hover{
+    color: inherit;
+    transform: translate(0%, -20%);
+}
 
 /* Swiper */
 .swiper {
-    width: 300px;
-    height: 150px;
+    width: auto;
+    height: auto;
 }
 
 /* Search */
@@ -325,4 +369,128 @@ a{
     top: -75px;
     box-shadow: 15px 15px 10px gray;
     border-radius: 20px;
+}
+
+/* Card Styles */
+
+.card-sl {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0;
+}
+
+.card-action {
+    position: relative;
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+    z-index: 2;
+    color: #E26D5C;
+    background: #fff;
+    border-radius: 100%;
+    padding: 15px;
+    font-size: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-action:hover {
+    color: #fff;
+    background: #E26D5C;
+    animation: pulse 1.5s infinite;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.card-text {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #636262;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    animation: ease-in-out 0.5s;
+}
+
+.card-button:hover {
+    text-decoration: none;
+    opacity: 0.8;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .vh-75{
+        height: 100vh;
+    }
+    .categoryList{
+        top: -50px;
+    }
+}
+
+.video-bg {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.appContainerDash{
+    max-width: 1150px;
+    padding: 30px 0px;
+    max-height: fit-content;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    margin: auto;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+}
+.app{
+    background-color: rgba(16 18 27 / 40%);
+    max-width: 1150px;
+    max-height: fit-content;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    margin: auto;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 30px;
+    width: 100%;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+#adminNav{
+    background-color: rgba(16 18 27 / 40%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }

@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title">Revisor</x-slot>
 @if ($add)
 <div class="container">
     <div class="row justify-content-center mt-3">

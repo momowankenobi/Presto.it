@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIsRevisorFlagToUsers extends Migration
+class AddIsAdminToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddIsRevisorFlagToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_revisor')->after('password')->nullable();
+            $table->boolean('is_admin')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class AddIsRevisorFlagToUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('is_revisor');
+            $table->dropColumn('is_admin');
         });
     }
 }

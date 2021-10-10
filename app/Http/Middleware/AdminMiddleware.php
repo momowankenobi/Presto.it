@@ -6,8 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class RevisorMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,9 +17,9 @@ class RevisorMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-       if (Auth::user() && Auth::user()->is_revisor || Auth::user() && Auth::user()->is_admin){
-           return $next($request);
-       }
-       return redirect(route('home'))->with('access.denied.revisor.only','access denied');
+        if (Auth::user() && Auth::user()->is_admin){
+            return $next($request);
+        }
+        return redirect(route('home'))->with('access.denied.revisor.only','access denied');
     }
 }
