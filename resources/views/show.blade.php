@@ -120,9 +120,9 @@
                                         <!-- Additional required wrapper -->
                                         <div class="swiper-wrapper">
                                         <!-- Slides -->
-                                        <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
-                                        <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
-                                        <div class="swiper-slide"><img src="https://picsum.photos/300/150" style="width: 100%" class="" alt=""></div>
+                                        @foreach ($add->images as $image)
+                                        <div class="swiper-slide"><img src="{{Storage::url($image->file)}}" style="width: 100%" class="" alt=""></div>
+                                        @endforeach
                                         </div>
                                         <!-- If we need pagination -->
                                         <div class="swiper-pagination"></div>

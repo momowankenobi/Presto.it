@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Category;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Images;
+use App\Models\Category;
+use App\Models\AddImages;
 use Laravel\Scout\Searchable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Add extends Model
 {
@@ -28,7 +30,8 @@ class Add extends Model
         'title',
         'description',
         'price',
-        'category_id'
+        'category_id', 
+        'user_id'
     ];
     
     public function category(){
@@ -37,6 +40,10 @@ class Add extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function images(){
+        return $this->hasMany(Images::class);
     }
     
     static public function ToBeRevisionedCount(){
