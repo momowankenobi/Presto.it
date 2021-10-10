@@ -3,13 +3,13 @@
   $countrev = App\Models\User::ToBeRevisionedCount();
   $counttot = $countadd + $countrev;
 ?>
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-main" aria-label="Ninth navbar example">
   <div class="container-xl">
     <a class="navbar-brand" href="{{route('home')}}">
       <div class="logoDiv">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.37 423.426" enable-background="new 0 0 487.37 423.426" xml:space="preserve" role="img" aria-label="Red Triangle Vector">
             <g id="__id15_ssov0hhx">
-                <path d="M483.181,385.631l0.002-0.006L261.219,12.169l-0.114-0.008C256.922,4.927,249.19,0,240.231,0   c-8.034,0-15.099,3.957-19.499,9.979l-0.062-0.002l-0.146,0.254c-0.815,1.148-1.504,2.379-2.112,3.663L4.081,385.785l0.003,0.006   C1.509,389.637,0,394.254,0,399.229c0,13.363,10.833,24.197,24.198,24.197h438.981c13.361,0,24.191-10.834,24.191-24.197   C487.37,394.186,485.821,389.508,483.181,385.631z" style="fill: #b2fdf8;"></path>
+                <path d="M483.181,385.631l0.002-0.006L261.219,12.169l-0.114-0.008C256.922,4.927,249.19,0,240.231,0   c-8.034,0-15.099,3.957-19.499,9.979l-0.062-0.002l-0.146,0.254c-0.815,1.148-1.504,2.379-2.112,3.663L4.081,385.785l0.003,0.006   C1.509,389.637,0,394.254,0,399.229c0,13.363,10.833,24.197,24.198,24.197h438.981c13.361,0,24.191-10.834,24.191-24.197   C487.37,394.186,485.821,389.508,483.181,385.631z" style="stroke: black; stroke-width: 5%; fill: #b2fdf8;"></path>
             </g>
         </svg>
       </div>
@@ -23,10 +23,10 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
         </li> --}}
           <li class="nav-item">
-            <a class="nav-link text-light" href="{{route('articleNew')}}">Crea annuncio</a>
+            <a class="nav-link text-darker" href="{{route('articleNew')}}">Crea annuncio</a>
           </li>
         <li class="nav-item dropdown">
-          <a class="nav-link text-light dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
+          <a class="nav-link text-darker dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
           <ul class="dropdown-menu">
            @foreach ($categories as $category)
            <li>
@@ -42,7 +42,7 @@
       <div>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link text-darker dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
                   @auth
                       @if(Auth::user()->is_admin)
                         Benvenuto, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$counttot}}</span>

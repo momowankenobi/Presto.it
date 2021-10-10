@@ -20,13 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
+    <nav class="navbar sticky-top navbar-expand-lg {{$add->category->bgcolor}}" aria-label="Ninth navbar example">
         <div class="container-xl">
           <a class="navbar-brand" href="{{route('home')}}">
             <div class="logoDiv">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 487.37 423.426" enable-background="new 0 0 487.37 423.426" xml:space="preserve" role="img" aria-label="Red Triangle Vector">
                   <g id="__id15_ssov0hhx">
-                      <path d="M483.181,385.631l0.002-0.006L261.219,12.169l-0.114-0.008C256.922,4.927,249.19,0,240.231,0   c-8.034,0-15.099,3.957-19.499,9.979l-0.062-0.002l-0.146,0.254c-0.815,1.148-1.504,2.379-2.112,3.663L4.081,385.785l0.003,0.006   C1.509,389.637,0,394.254,0,399.229c0,13.363,10.833,24.197,24.198,24.197h438.981c13.361,0,24.191-10.834,24.191-24.197   C487.37,394.186,485.821,389.508,483.181,385.631z" style="fill: {{$add->category->hexcolor}};"></path>
+                      <path d="M483.181,385.631l0.002-0.006L261.219,12.169l-0.114-0.008C256.922,4.927,249.19,0,240.231,0   c-8.034,0-15.099,3.957-19.499,9.979l-0.062-0.002l-0.146,0.254c-0.815,1.148-1.504,2.379-2.112,3.663L4.081,385.785l0.003,0.006   C1.509,389.637,0,394.254,0,399.229c0,13.363,10.833,24.197,24.198,24.197h438.981c13.361,0,24.191-10.834,24.191-24.197   C487.37,394.186,485.821,389.508,483.181,385.631z" style="stroke: black; stroke-width: 5%; fill: {{$add->category->hexcolor}};"></path>
                   </g>
               </svg>
             </div>
@@ -103,8 +103,8 @@
                 <div class="container-fluid">
                     <div class="row {{$add->category->bgcolor}}">
                         <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
-                            <h1>{{$add->category->name}}</h1>
-                            <h3 class="text-muted">by Presto.it</h3>
+                            <h1 class="text-light">{{$add->category->name}}</h1>
+                            <h3 class="text-light muted">by Presto.it</h3>
                         </div>
                         <div class="col-12 col-md-6">
                             <img style="height: 350px" src="/img/discountsale.png" class="img-fluid img-header" alt="">
@@ -121,7 +121,7 @@
                                         <div class="swiper-wrapper">
                                         <!-- Slides -->
                                         @foreach ($add->images as $image)
-                                        <div class="swiper-slide"><img src="{{Storage::url($image->file)}}" style="width: 100%" class="" alt=""></div>
+                                          <div class="swiper-slide"><img src="{{Storage::url($image->file)}}" style="width: 100%" class="" alt=""></div>
                                         @endforeach
                                         </div>
                                         <!-- If we need pagination -->
