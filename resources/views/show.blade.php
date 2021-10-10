@@ -121,8 +121,9 @@
                                         <div class="swiper-wrapper">
                                         <!-- Slides -->
                                         @foreach ($add->images as $image)
-                                        <div class="swiper-slide"><img src="{{Storage::url($image->file)}}" style="width: 100%" class="" alt=""></div>
+                                        <div class="swiper-slide"><img src="{{$image->getUrl(300,150)}}" style="width: 100%" class="" alt=""></div>
                                         @endforeach
+                                        {{-- @dd($add->images->getUrl(300,150)) --}}
                                         </div>
                                         <!-- If we need pagination -->
                                         <div class="swiper-pagination"></div>

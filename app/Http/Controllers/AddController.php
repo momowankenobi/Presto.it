@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ResizeImage;
 use App\Models\Add;
 use App\Models\Images;
 use App\Models\Category;
@@ -40,6 +41,11 @@ class AddController extends Controller
             $fileName=basename($image);
             $newFileName="public/adds/{$add->id}/{$fileName}";
             Storage::move($image, $newFileName);
+            dispatch(new ResizeImage(
+                $newFileName,
+                300,
+                150
+            ));
             $i->file=$newFileName;
             $i->add_id=$add->id;
             $i->save();
@@ -51,6 +57,11 @@ class AddController extends Controller
     public function upload(Request $request){
         $uniqueSecret=$request->input('uniqueSecret');  
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        dispatch(new ResizeImage(
+            $fileName,
+            120,
+            120
+        ));
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(["id"=>$fileName]);
     }
@@ -72,13 +83,14 @@ class AddController extends Controller
         foreach ($images as $image){
             $data[] = [
                 'id'  => $image,
-                'src' => Storage::url($image)
+                'src' => Images::getUrlByFilePath($image, 120, 120)
             ];
         }
         return response()->json($data);
     }
 
     public function show(Add $add){
+        dd($add->images);
         return view('show', compact('add'));
     }
 
