@@ -36,3 +36,7 @@ Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController
 // Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index'); //Lavora con noi
 // Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit');
 
+
+Route::get('/phpinfo', function() {
+    return phpinfo();
+});

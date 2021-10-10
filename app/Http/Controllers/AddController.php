@@ -37,17 +37,17 @@ class AddController extends Controller
         $images = array_diff($images, $removedimages);
 
         foreach ($images as $image){
-            $i=new Images();
-            $fileName=basename($image);
-            $newFileName="public/adds/{$add->id}/{$fileName}";
+            $i = new Images();
+            $fileName = basename($image);
+            $newFileName = "public/adds/{$add->id}/{$fileName}";
             Storage::move($image, $newFileName);
             dispatch(new ResizeImage(
                 $newFileName,
                 300,
                 150
             ));
-            $i->file=$newFileName;
-            $i->add_id=$add->id;
+            $i->file = $newFileName;
+            $i->add_id = $add->id;
             $i->save();
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
@@ -90,7 +90,7 @@ class AddController extends Controller
     }
 
     public function show(Add $add){
-        dd($add->images);
+        // dd($add->images);
         return view('show', compact('add'));
     }
 
