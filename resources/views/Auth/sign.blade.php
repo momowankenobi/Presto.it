@@ -216,53 +216,64 @@
             }
         </style>
     </x-slot>
+    @if ($errors->any())
+        <div class="d-flex justify-content-center">
+            <div class="alert mt-2 text-light alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
     <div class="container my-5">
         <div class="row align-items-center justify-content-center">
             <div id="container">
                 <div class="form-container sign-up-container">
                     <form method="POST" class="formSign" action="{{route('register')}}">
                         @csrf
-                        <h1>Create Account</h1>
+                        <h1>Crea Account</h1>
                         <div class="social-container">
                             <a href="#" class="anchorSign social"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="anchorSign social"><i class="fab fa-google-plus-g"></i></a>
                             <a href="#" class="anchorSign social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <span class="signSpan">or use your email for registration</span>
+                        <span class="signSpan">oppure use la tua email per la registrazione</span>
                         <input name="name" type="text" placeholder="Name" />
                         <input name="email" type="email" placeholder="Email" />
                         <input name="password" type="password" placeholder="Password" />
                         <input name="password_confirmation" type="password" placeholder="Password" />
-                        <button type="submit" class="signButton">Sign Up</button>
+                        <button type="submit" class="signButton">Registrati</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
                     <form method="POST" class="formSign" action="{{route('login')}}">
                         @csrf
-                        <h1>Sign in</h1>
+                        <h1>Accedi</h1>
                         <div class="social-container">
                             <a href="#" class="anchorSign social"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" class="anchorSign social"><i class="fab fa-google-plus-g"></i></a>
                             <a href="#" class="anchorSign social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <span class="signSpan">or use your account</span>
+                        <span class="signSpan">oppure usa il tuo account</span>
                         <input name="email" type="email" placeholder="Email" />
                         <input name="password" type="password" placeholder="Password" />
-                        <a class="anchorSign" href="#">Forgot your password?</a>
-                        <button type="submit" class="signButton">Sign In</button>
+                        <a class="anchorSign" href="#">Hai dimenticato la password?</a>
+                        <button type="submit" class="signButton">Accedi</button>
                     </form>
                 </div>
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
-                            <button class="signButton ghost" id="signIn">Sign In</button>
+                            <h1>Bentornato!</h1>
+                            <p>Per rimanere connesso, effettua il login con i tuoi dati personali</p>
+                            <button class="signButton ghost" id="signIn">Accedi</button>
                         </div>
                         <div class="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start journey with us</p>
-                            <button class="signButton ghost" id="signUp">Sign Up</button>
+                            <h1>Ciao, Amico!</h1>
+                            <p>Inserisci i tuoi dati personali e inizia il viaggio con noi</p>
+                            <button class="signButton ghost" id="signUp">Registrati</button>
                         </div>
                     </div>
                 </div>

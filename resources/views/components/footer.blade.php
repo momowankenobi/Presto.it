@@ -18,7 +18,7 @@
         </div>
         <div style="background-color: #4E79BA" class="col-12 col-md-6 d-flex text-light flex-column align-items-center justify-content-around p-3">
             <div class="p-4 mb-4">
-                <a id="navLogo" class="navbar-brand text-red" href="./index.html"><i
+                <a id="navLogo" class="nav-link text-light" href="{{route('home')}}"><i
                         class="fab fa-product-hunt fa-3x"></i>resto.it</a>
             </div>
             <div class="d-flex w-100 align-items-center justify-content-around">

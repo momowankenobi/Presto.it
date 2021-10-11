@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddRequest;
 use App\Jobs\ResizeImage;
 use App\Models\Add;
 use App\Models\Images;
@@ -22,7 +23,7 @@ class AddController extends Controller
         return view('form', compact('categories', 'uniqueSecret'));
     }
 
-    public function store(Request $request){
+    public function store(AddRequest $request){
         $add = Auth::user()->adds()->create([
             'title'=>$request->title,
             'description'=>$request->description,
@@ -54,7 +55,7 @@ class AddController extends Controller
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
     }
 
-    public function upload(Request $request){
+    public function upload(Reqpuest $request){
         $uniqueSecret=$request->input('uniqueSecret');  
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         dispatch(new ResizeImage(
