@@ -97,7 +97,7 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
     <div id="page-container">
         <div id="content-wrap">
                 <div class="container-fluid headContainer">

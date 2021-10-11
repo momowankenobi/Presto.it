@@ -23,7 +23,7 @@
 
 
     
-<div class="col-md-4 p-4">
+<div class="col-12 col-sm-6 col-xl-4 p-4">
     <div class="card-sl">
         <div class="card-image">
             <img class="img-fluid" style="width: 100%" src="https://via.placeholder.com/300x150"/>

@@ -12094,10 +12094,10 @@ a{
 
 @media screen and (max-width: 768px) {
     .vh-75{
-        height: 100vh;
+        height: 100vh !important;
     }
     .categoryList{
-        top: -50px;
+        position: static;
     }
 }
 
@@ -12156,14 +12156,8 @@ video {
     z-index: 2;
 }
 
-#adminNav{
-    background-color: rgba(16 18 27 / 40%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
 .imgWaveHeader{
-    z-index: 2000;
+    z-index: 1001;
 }
 
 .headContainer{

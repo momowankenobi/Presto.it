@@ -6,19 +6,19 @@
         </div>
     @endif
     {{-- Header e searchbar --}}
-    <div class="container-fluid headContainer vh-75 bg-main">
-        <div class="row justify-content-center">
-            <div class="d-md-flex col-10">
-                <div class="col-12 col-md-6">
-                    <img src="/img/discountsale.png" class="img-fluid img-header" alt="">
-                </div>
-                <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
-                    {{-- <h1 class="text-center my-5 display-1 fw-bold text-blue" id="benvenuti">Presto.it</h1> --}}
-                    <div class="col-12  d-flex justify-content-center">
-                        <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
+    <div class="container-fluid d-flex justify-content-center headContainer vh-75 bg-main">
+        <div class="container">
+            <div class="d-flex flex-column d-xl-flex align-items-center">
+                <div class="d-xl-flex justify-content-center col-10">
+                    <div class="col-12 col-xl-6">
+                        <img src="/img/discountsale.png" class="img-fluid img-header" alt="">
                     </div>
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="searchContain">
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                        {{-- <h1 class="text-center my-5 display-1 fw-bold text-blue" id="benvenuti">Presto.it</h1> --}}
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
                             <div class="mt-3" id="cover">
                                 <form method="get" class="formSearch" action="{{route('search')}}">
                                     <div class="tb">
@@ -33,8 +33,8 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
-                </div>    
+                    </div>    
+                </div>
             </div>
         </div>
         <div>
