@@ -11636,6 +11636,7 @@ textarea.form-control-lg {
     --blue: #45A29E;
     --accent: #B4B9FD;
     --red: #ff7575;
+    --night: #23395B;
 }
 
 h1,h2,h3{
@@ -11651,7 +11652,7 @@ h1,h2,h3{
 }
 
 #footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem;   /* Footer height */
@@ -11705,6 +11706,18 @@ h1,h2,h3{
 
 .border-main {
     border: 2px solid var(--main)
+}
+
+.text-night {
+    color: var(--night)
+}
+
+.bg-night {
+    background-color: var(--night) ;
+}
+
+.border-night {
+    border: 2px solid var(--night)
 }
 
 .text-sec {
@@ -12024,7 +12037,7 @@ a{
     top: -75px;
     box-shadow: 15px 15px 10px gray;
     border-radius: 20px;
-    z-index: 2000;
+    z-index: 20;
 }
 
 /* Card Styles */
@@ -12094,10 +12107,10 @@ a{
 
 @media screen and (max-width: 768px) {
     .vh-75{
-        height: 100vh;
+        height: 100vh !important;
     }
     .categoryList{
-        top: -50px;
+        position: static;
     }
 }
 
@@ -12156,14 +12169,8 @@ video {
     z-index: 2;
 }
 
-#adminNav{
-    background-color: rgba(16 18 27 / 40%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
 .imgWaveHeader{
-    z-index: 2000;
+    z-index: 1001;
 }
 
 .headContainer{
@@ -12183,7 +12190,7 @@ video {
 .wave1{
     -webkit-animation: animate 30s linear infinite;
             animation: animate 30s linear infinite;
-    z-index: 1000;
+    z-index: 10;
     opacity: 1;
     -webkit-animation-delay: 0s;
             animation-delay: 0s;
@@ -12192,7 +12199,7 @@ video {
 .wave2{
     -webkit-animation: animate2 15s linear infinite;
             animation: animate2 15s linear infinite;
-    z-index: 999;
+    z-index: 9;
     opacity: 0.5;
     -webkit-animation-delay: -5s;
             animation-delay: -5s;
@@ -12201,7 +12208,7 @@ video {
 .wave3{
     -webkit-animation: animate 30s linear infinite;
             animation: animate 30s linear infinite;
-    z-index: 998;
+    z-index: 8;
     opacity: 0.2;
     -webkit-animation-delay: -2s;
             animation-delay: -2s;
@@ -12210,7 +12217,7 @@ video {
 .wave4{
     -webkit-animation: animate2 5s linear infinite;
             animation: animate2 5s linear infinite;
-    z-index: 997;
+    z-index: 7;
     opacity: 0.7;
     -webkit-animation-delay: -5s;
             animation-delay: -5s;
@@ -12247,6 +12254,11 @@ video {
     100%{
         background-position-x: -1000px;
     }
+}
+.navbar{
+    background-color: rgba(16 18 27 / 40%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 .flag-icon-background {
   background-size: contain;

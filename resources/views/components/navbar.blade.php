@@ -3,7 +3,8 @@
   $countrev = App\Models\User::ToBeRevisionedCount();
   $counttot = $countadd + $countrev;
 ?>
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-main" aria-label="Ninth navbar example">
+<div class="container-fluid bg-night" style="position: absolute; height: 350px;"></div>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark" aria-label="Ninth navbar example">
   <div class="container-xl">
     <a class="navbar-brand" href="{{route('home')}}">
       <div class="logoDiv">
@@ -23,10 +24,10 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
         </li> --}}
           <li class="nav-item">
-            <a class="nav-link text-darker" href="{{route('articleNew')}}">{{__('ui.newadd')}}</a>
+            <a class="nav-link text-light" href="{{route('articleNew')}}">{{__('ui.newadd')}}</a>
           </li>
         <li class="nav-item dropdown">
-          <a class="nav-link text-darker dropdown-toggle" data-bs-toggle="dropdown">{{__('ui.categories')}}</a>
+          <a class="nav-link text-light dropdown-toggle" data-bs-toggle="dropdown">{{__('ui.categories')}}</a>
           <ul class="dropdown-menu">
            @foreach ($categories as $category)
            <li>
@@ -52,7 +53,7 @@
               @include('components.locale', ['lang'=>'es', 'nation'=>'es'])
             </li>  
             <li class="nav-item dropdown">
-              <a class="nav-link text-darker dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
                   @auth
                       @if(Auth::user()->is_admin)
                         {{__('ui.welcome')}}, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$counttot}}</span>
