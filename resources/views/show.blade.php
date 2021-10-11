@@ -100,15 +100,21 @@
       </nav>
     <div id="page-container">
         <div id="content-wrap">
-                <div class="container-fluid">
+                <div class="container-fluid headContainer">
                     <div class="row {{$add->category->bgcolor}}">
                         <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
                             <h1 class="text-light">{{$add->category->name}}</h1>
                             <h3 class="text-light muted">by Presto.it</h3>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 imgWaveHeader col-md-6">
                             <img style="height: 350px" src="/img/discountsale.png" class="img-fluid img-header" alt="">
                         </div>
+                    </div>
+                    <div>
+                      <div class="wave wave1"></div>
+                      <div class="wave wave2"></div>
+                      <div class="wave wave3"></div>
+                      <div class="wave wave4"></div>
                     </div>
                 </div>
                 <div class="container py-5">
