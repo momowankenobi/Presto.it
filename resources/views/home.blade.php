@@ -22,7 +22,7 @@
                                 <div class="mt-3" id="cover">
                                     <form method="get" class="formSearch" action="{{route('search')}}">
                                       <div class="tb">
-                                        <div class="td"><input class="buttonInput" name="q" type="text" placeholder="Cosa stai cercando oggi?" required></div>
+                                        <div class="td"><input class="buttonInput" name="q" type="text" placeholder="{{__('ui.search')}}" required></div>
                                         <div class="td" id="s-cover">
                                           <button class="buttonSearch" type="submit">
                                             <div id="s-circle"></div>
@@ -111,7 +111,7 @@
     {{-- annunci --}}
     <div class="container">
         <div class="row justify-content-center">
-            <h1 class="text-center display-4">Il miglior sito di annunci!</h1>
+            <h1 class="text-center display-4">{{__('ui.best')}}</h1>
         </div>
         <div class="row justify-content-center">
             @foreach ($adds as $add)

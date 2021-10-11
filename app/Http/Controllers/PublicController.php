@@ -33,6 +33,11 @@ class PublicController extends Controller
         $contatto = compact('user', 'service', 'message', 'email');
         Mail::to($email)->send(new ContactMail($contact));
     }
+
+    public function locale($locale) {
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
 }
 
 

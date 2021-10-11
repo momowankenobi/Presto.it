@@ -12,6 +12,7 @@
     "devDependencies": {
         "axios": "^0.21",
         "dropzone": "^5.9.3",
+        "flag-icon-css": "^3.5.0",
         "jquery": "^3.6.0",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",

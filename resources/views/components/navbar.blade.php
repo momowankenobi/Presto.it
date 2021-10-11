@@ -23,10 +23,10 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
         </li> --}}
           <li class="nav-item">
-            <a class="nav-link text-darker" href="{{route('articleNew')}}">Crea annuncio</a>
+            <a class="nav-link text-darker" href="{{route('articleNew')}}">{{__('ui.newadd')}}</a>
           </li>
         <li class="nav-item dropdown">
-          <a class="nav-link text-darker dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
+          <a class="nav-link text-darker dropdown-toggle" data-bs-toggle="dropdown">{{__('ui.categories')}}</a>
           <ul class="dropdown-menu">
            @foreach ($categories as $category)
            <li>
@@ -39,31 +39,41 @@
           </ul>
         </li>
       </ul>
+      
       <div>
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              @include('components.locale', ['lang'=>'it', 'nation'=>'it'])
+            </li>
+            <li class="nav-item">
+              @include('components.locale', ['lang'=>'en', 'nation'=>'gb'])
+            </li>
+            <li class="nav-item">
+              @include('components.locale', ['lang'=>'es', 'nation'=>'es'])
+            </li>  
             <li class="nav-item dropdown">
               <a class="nav-link text-darker dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">
                   @auth
                       @if(Auth::user()->is_admin)
-                        Benvenuto, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$counttot}}</span>
+                        {{__('ui.welcome')}}, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$counttot}}</span>
                       @elseif(Auth::user()->is_revisor)
-                        Benvenuto, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$countadd}}</span>
+                        {{__('ui.welcome')}}, {{Auth::user()->name}} <span class="badge rounded-circle bg-danger"> {{$countadd}}</span>
                       @else                     
-                        Benvenuto, {{Auth::user()->name}}
+                        {{__('ui.welcome')}}, {{Auth::user()->name}}
                       @endif
                   @else
-                      Area Personale
+                      {{__('ui.personal')}}
                   @endauth
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
                 @guest
-                  <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
-                  <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                  <li><a class="dropdown-item" href="{{route('register')}}">{{__('ui.register')}}</a></li>
+                  <li><a class="dropdown-item" href="{{route('login')}}">{{__('ui.login')}}</a></li>
                 @else
                 @if(Auth::user()->is_admin)
-                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge rounded-circle bg-danger">{{$counttot}}</span></a></li>
+                    <li><a class="dropdown-item" href="{{route('admin.index')}}">{{__('ui.dashboard')}} <span class="badge rounded-circle bg-danger">{{$counttot}}</span></a></li>
                     @elseif(Auth::user()->is_revisor)
-                    <li><a class="dropdown-item" href="{{route('admin.index')}}">Pannello di controllo <span class="badge rounded-circle bg-danger">{{$countadd}}</span></a></li>
+                    <li><a class="dropdown-item" href="{{route('admin.index')}}">{{__('ui.dashboard')}} <span class="badge rounded-circle bg-danger">{{$countadd}}</span></a></li>
                     @endif
                 <li><a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

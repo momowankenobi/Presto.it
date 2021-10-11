@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 col-md-6 bg-main p-3 d-flex flex-column justify-content-around align-items-center">
             <div class="w-100 p-4 text-center">
-                <h4 class="mb-4">Resta connesso!</h4>
+                <h4 class="mb-4">{{__('ui.connected')}}</h4>
                 <div class="w-100 d-flex justify-content-evenly">
                     <i class="fab fa-2x fa-instagram"></i>
                     <i class="fab fa-2x fa-facebook"></i>
