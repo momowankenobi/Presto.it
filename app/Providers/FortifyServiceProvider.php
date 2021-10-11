@@ -46,12 +46,12 @@ class FortifyServiceProvider extends ServiceProvider
    
         Fortify::loginView(function(){
             
-            return view('auth.login');
+            return view('auth.sign');
         });
 
         Fortify::registerView(function(){
             
-            return view('auth.register');
+            return view('auth.sign');
         });
    
    

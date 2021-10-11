@@ -6,7 +6,7 @@
         </div>
     @endif
     {{-- Header e searchbar --}}
-    <div class="container-fluid d-flex justify-content-center headContainer vh-75 bg-main">
+    <div class="container-fluid d-flex justify-content-center headContainer vh-75 bg-night">
         <div class="container">
             <div class="d-flex flex-column d-xl-flex align-items-center">
                 <div class="d-xl-flex justify-content-center col-10">
@@ -16,7 +16,7 @@
                     <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                         {{-- <h1 class="text-center my-5 display-1 fw-bold text-blue" id="benvenuti">Presto.it</h1> --}}
                         <div class="col-12 d-flex justify-content-center">
-                            <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
+                            <img src="/img/logo/croppedgreenlogow.png" class="img-fluid" style="width: 300px" alt="">
                         </div>
                         <div class="col-12 d-flex justify-content-center">
                             <div class="mt-3" id="cover">
@@ -115,7 +115,7 @@
    
 
     {{-- annunci --}}
-    <div class="container">
+    <div class="my-3 container">
         <div class="row justify-content-center">
             <h1 class="text-center display-4">{{__('ui.best')}}</h1>
         </div>

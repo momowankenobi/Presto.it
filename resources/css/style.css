@@ -11,6 +11,7 @@
     --blue: #45A29E;
     --accent: #B4B9FD;
     --red: #ff7575;
+    --night: #23395B;
 }
 
 h1,h2,h3{
@@ -26,7 +27,7 @@ h1,h2,h3{
 }
 
 #footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem;   /* Footer height */
@@ -68,6 +69,18 @@ h1,h2,h3{
 
 .border-main {
     border: 2px solid var(--main)
+}
+
+.text-night {
+    color: var(--night)
+}
+
+.bg-night {
+    background-color: var(--night) ;
+}
+
+.border-night {
+    border: 2px solid var(--night)
 }
 
 .text-sec {
@@ -369,7 +382,7 @@ a{
     top: -75px;
     box-shadow: 15px 15px 10px gray;
     border-radius: 20px;
-    z-index: 2000;
+    z-index: 20;
 }
 
 /* Card Styles */
@@ -510,28 +523,28 @@ video {
 
 .wave1{
     animation: animate 30s linear infinite;
-    z-index: 1000;
+    z-index: 10;
     opacity: 1;
     animation-delay: 0s;
     bottom: 0;
 }
 .wave2{
     animation: animate2 15s linear infinite;
-    z-index: 999;
+    z-index: 9;
     opacity: 0.5;
     animation-delay: -5s;
     bottom: 10px;
 }
 .wave3{
     animation: animate 30s linear infinite;
-    z-index: 998;
+    z-index: 8;
     opacity: 0.2;
     animation-delay: -2s;
     bottom: 15px;
 }
 .wave4{
     animation: animate2 5s linear infinite;
-    z-index: 997;
+    z-index: 7;
     opacity: 0.7;
     animation-delay: -5s;
     bottom: 20px;
@@ -551,4 +564,9 @@ video {
     100%{
         background-position-x: -1000px;
     }
+}
+.navbar{
+    background-color: rgba(16 18 27 / 40%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
