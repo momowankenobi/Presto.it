@@ -11918,21 +11918,21 @@ a{
 {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
-    font-size: 40px;
+    font-size: 27px;
 }
 
 .buttonInput[type="text"]:-ms-input-placeholder
 {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
-    font-size: 40px;
+    font-size: 27px;
 }
 
 .buttonInput[type="text"]::placeholder
 {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
-    font-size: 40px;
+    font-size: 27px;
 }
 
 #s-cover
@@ -12263,7 +12263,7 @@ video {
 
 
 /* Category cards */
-/* .categorycontainer{
+.categorycontainer{
     width: 400px;
     height: 400px;
     margin: 100px auto;
@@ -12304,7 +12304,7 @@ video {
   
   .categorycontainer:hover img{
     transform: scale(1.1);
-  } */
+  }
 .alert{
     border-radius: 25px;
     width: 50%;
@@ -12320,6 +12320,7 @@ video {
     background-color: #FF4365 !important;
     border: none;
 }
+
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;
