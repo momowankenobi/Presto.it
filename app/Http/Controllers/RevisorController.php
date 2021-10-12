@@ -21,8 +21,8 @@ class RevisorController extends Controller
     }
     
     public function showadd(){
-        $add=Add::where('is_accepted',null)->orderBy('created_at','desc')->first();
-        return view('admin.showadd',compact('add'));
+        $adds = Add::where('is_accepted',null)->orderBy('created_at','desc')->get();
+        return view('admin.showadd',compact('adds'));
     }
     private function setAccept($add_id, $value){
         $add=Add::find($add_id);
