@@ -12,13 +12,13 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
     public function home(){
-        $adds = Add::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
+        $adds = Add::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
         return view('home', compact('adds'));
 
     } 
     public function categoryList($name, $category_id){
         $category = Category::find($category_id);
-        $adds = $category->adds()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
+        $adds = $category->adds()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6);
         // dd($category);
         return view('category', compact('category','adds'));
     }
@@ -32,6 +32,11 @@ class PublicController extends Controller
         $contact = compact('user', 'service', 'message');
         $contatto = compact('user', 'service', 'message', 'email');
         Mail::to($email)->send(new ContactMail($contact));
+    }
+
+    public function locale($locale) {
+        session()->put('locale', $locale);
+        return redirect()->back();
     }
 }
 

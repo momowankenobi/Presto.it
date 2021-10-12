@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AddRequest;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\ResizeImage;
 use App\Models\Add;
 use App\Models\Images;
@@ -22,7 +24,7 @@ class AddController extends Controller
         return view('form', compact('categories', 'uniqueSecret'));
     }
 
-    public function store(Request $request){
+    public function store(AddRequest $request){
         $add = Auth::user()->adds()->create([
             'title'=>$request->title,
             'description'=>$request->description,
@@ -37,18 +39,27 @@ class AddController extends Controller
         $images = array_diff($images, $removedimages);
 
         foreach ($images as $image){
-            $i=new Images();
-            $fileName=basename($image);
-            $newFileName="public/adds/{$add->id}/{$fileName}";
+            $i = new Images();
+            $fileName = basename($image);
+            $newFileName = "public/adds/{$add->id}/{$fileName}";
             Storage::move($image, $newFileName);
             dispatch(new ResizeImage(
                 $newFileName,
                 300,
                 150
             ));
-            $i->file=$newFileName;
-            $i->add_id=$add->id;
+
+            dispatch(new ResizeImage(
+                $newFileName,
+                400,
+                300,
+            ));
+
+
+            $i->file = $newFileName;
+            $i->add_id = $add->id;
             $i->save();
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');

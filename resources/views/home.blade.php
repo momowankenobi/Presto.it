@@ -1,41 +1,49 @@
 <x-layout>
     <x-slot name='title'>Home</x-slot>
     @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
+        <div class="d-flex justify-content-center">
+            <div class="alert mt-2 text-light alert-success">
+                {{ session('message') }}
+            </div>
         </div>
     @endif
     {{-- Header e searchbar --}}
-    <div class="container-fluid vh-75 bg-main">
-        <div class="row justify-content-center">
-            <div class="d-md-flex col-10">
-                <div class="col-12 col-md-6">
-                    <img src="/img/discountsale.png" class="img-fluid img-header" alt="">
-                </div>
-                <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+    <div class="container-fluid d-flex justify-content-center headContainer vh-75 bg-night">
+        <div class="container">
+            <div class="d-flex flex-column d-xl-flex align-items-center">
+                <div class="d-xl-flex justify-content-center col-10">
+                    <div class="col-12 col-xl-6">
+                        <img src="/img/discountsale.png" class="img-fluid img-header" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
                         {{-- <h1 class="text-center my-5 display-1 fw-bold text-blue" id="benvenuti">Presto.it</h1> --}}
-                        <div class="col-12  d-flex justify-content-center">
-                            <img src="/img/logo/croppedredlogo.png" class="img-fluid" style="width: 300px" alt="">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="/img/logo/croppedgreenlogow.png" class="img-fluid" style="width: 300px" alt="">
                         </div>
                         <div class="col-12 d-flex justify-content-center">
-                            <div class="searchContain">
-                                <div class="mt-3" id="cover">
-                                    <form method="get" class="formSearch" action="{{route('search')}}">
-                                      <div class="tb">
-                                        <div class="td"><input class="buttonInput" name="q" type="text" placeholder="Cosa stai cercando oggi?" required></div>
-                                        <div class="td" id="s-cover">
-                                          <button class="buttonSearch" type="submit">
-                                            <div id="s-circle"></div>
-                                            <span class="buttonSpan"></span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </form>
-                                </div>
+                            <div class="mt-3" id="cover">
+                                <form method="get" class="formSearch" action="{{route('search')}}">
+                                    <div class="tb">
+                                    <div class="td"><input class="buttonInput" name="q" type="text" placeholder="{{__('ui.search')}}" required></div>
+                                    <div class="td" id="s-cover">
+                                        <button class="buttonSearch" type="submit">
+                                        <div id="s-circle"></div>
+                                        <span class="buttonSpan"></span>
+                                        </button>
+                                    </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                </div>    
+                    </div>    
+                </div>
             </div>
+        </div>
+        <div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
         </div>
     </div>
 
@@ -53,6 +61,13 @@
             </div>
         </div>
     </div>
+
+    {{-- <div class="container categorycontainer">
+        <img src="https://unsplash.it/400/400" alt="" />
+        <div class="overlay categoryoverlay">
+          <span>Hello.</span>
+        </div>
+      </div> --}}
 
     {{-- annunci old --}}
     {{-- <div class="card-block" onclick="{{route('add.show', compact('add'))}}">
@@ -109,9 +124,9 @@
    
 
     {{-- annunci --}}
-    <div class="container">
+    <div class="my-3 container">
         <div class="row justify-content-center">
-            <h1 class="text-center display-4">Il miglior sito di annunci!</h1>
+            <h1 class="text-center display-4">{{__('ui.best')}}</h1>
         </div>
         <div class="row justify-content-center">
             @foreach ($adds as $add)

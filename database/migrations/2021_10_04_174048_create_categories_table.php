@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->string('color');
             $table->string('icon');
             $table->string('hexcolor');
+            $table->string('image');
             $table->timestamps();
         });
     }
