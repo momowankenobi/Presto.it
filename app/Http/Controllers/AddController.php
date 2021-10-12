@@ -90,7 +90,6 @@ class AddController extends Controller
     }
 
     public function show(Add $add){
-        dd($add->images);
         return view('show', compact('add'));
     }
 
