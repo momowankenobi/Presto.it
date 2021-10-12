@@ -55,7 +55,7 @@ class AddController extends Controller
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
     }
 
-    public function upload(Reqpuest $request){
+    public function upload(Request $request){
         $uniqueSecret=$request->input('uniqueSecret');  
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         dispatch(new ResizeImage(
