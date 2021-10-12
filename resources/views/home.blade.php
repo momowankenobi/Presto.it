@@ -1,8 +1,10 @@
 <x-layout>
     <x-slot name='title'>Home</x-slot>
     @if (session('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
+        <div class="d-flex justify-content-center">
+            <div class="alert mt-2 text-light alert-success">
+                {{ session('message') }}
+            </div>
         </div>
     @endif
     {{-- Header e searchbar --}}

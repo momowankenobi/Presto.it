@@ -615,3 +615,18 @@ video {
   .categorycontainer:hover img{
     transform: scale(1.1);
   }
+.alert{
+    border-radius: 25px;
+    width: 50%;
+    align-self: center;
+    margin-bottom: 0 !important;
+}
+.alert-success{
+    background-color: #33AB83 !important;
+    /* color: white !important; */
+    border: none;
+}
+.alert-danger{
+    background-color: #FF4365 !important;
+    border: none;
+}
