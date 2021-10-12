@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddRequest;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\ResizeImage;
 use App\Models\Add;
 use App\Models\Images;
@@ -47,9 +48,18 @@ class AddController extends Controller
                 300,
                 150
             ));
+
+            dispatch(new ResizeImage(
+                $newFileName,
+                400,
+                300,
+            ));
+
+
             $i->file = $newFileName;
             $i->add_id = $add->id;
             $i->save();
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
