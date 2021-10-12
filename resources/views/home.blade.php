@@ -62,6 +62,13 @@
         </div>
     </div>
 
+    {{-- <div class="container categorycontainer">
+        <img src="https://unsplash.it/400/400" alt="" />
+        <div class="overlay categoryoverlay">
+          <span>Hello.</span>
+        </div>
+      </div> --}}
+
     {{-- annunci old --}}
     {{-- <div class="card-block" onclick="{{route('add.show', compact('add'))}}">
         <div class="image-block">

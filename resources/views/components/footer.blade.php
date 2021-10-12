@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row">
         <div style="background-color: #3B6097" class="col-12 col-md-6 text-light p-3 d-flex flex-column justify-content-around align-items-center">
             <div class="w-100 p-4 text-center">
