@@ -29,6 +29,14 @@
                        {{  $image->id  }} <br>
                        {{  $image->file  }} <br>
                        {{  Storage::url($image->file)  }}
+
+                       <ul>
+                           @if ($image->labels)
+                             @foreach ($image->labels as $label)
+                                <li>{{$label}}</li>
+                             @endforeach
+                           @endif
+                       </ul>
                        @endforeach
 
 

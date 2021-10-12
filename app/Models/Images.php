@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Images extends Model
 {
+   
+   protected $casts = [
+
+        "labels" => "array",
+
+   ];
+   
     use HasFactory;
 
     protected $fillable = [
