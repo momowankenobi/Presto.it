@@ -158,6 +158,7 @@
                                 </div>
                                 <div class="card-text">
                                     <b class="fs-3">€{{$add->price}}</b>
+                                    <p class="text-darker m-0">{{$add->description}}</p>
                                 </div>
                                 <div class="card-footer text-darker d-flex justify-content-start">
                                     <strong class="text-darker">Categoria:&nbsp&nbsp

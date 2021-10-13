@@ -7,8 +7,8 @@
           }
         </style>
     </x-slot>
-  @if($user)
-      <div class="container">
+  @if(count($users))
+      {{-- <div class="container">
           <div class="row justify-content-center mt-3">
               <div class="col-10 col-md-8">
                   <div class="card">
@@ -40,7 +40,46 @@
                   </form>
               </div>
           </div>
-      </div>
+      </div> --}}
+
+      <div class="container">
+        <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome Utente</th>
+              <th scope="col">Email</th>
+              <th scope="col">Rifiuta</th>
+              <th scope="col">Accetta</th>
+              <th scope="col">Creazione Account</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($users as $user)
+            <tr >
+                <td>{{$user->id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>
+                    <form method="POST" action="{{route('admin.reject', with($user->id))}}" >
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Rifiuta</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{{route('admin.accept', with($user->id))}}" >
+                        @csrf
+                        <button class="btn btn-success" type="submit">Accetta</button>
+                    </form>
+                </td>
+                <td>{{$user->created_at}}</td>
+            </tr>
+            @endforeach    
+          </tbody>
+        </table>
+    </div>
+  </div>
 
   @else
       <h2 class="text-center mt-3">Non ci sono più utenti da assumere come revisori</h2>

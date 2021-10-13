@@ -13,8 +13,8 @@ class AdminController extends Controller
     }
     
     public function showrev(){
-        $user = User::where('is_revisor',null)->orderBy('created_at','desc')->first();
-        return view('admin.showrev',compact('user'));
+        $users = User::where('is_revisor',null)->orderBy('created_at','desc')->get();
+        return view('admin.showrev',compact('users'));
     }
    
     private function setAccept($user_id, $value){

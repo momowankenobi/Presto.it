@@ -3201,11 +3201,11 @@ $(function () {
     });
   }
 });
-var swiper = new Swiper('.swiper', {
+var swiper1 = new Swiper('.imageSwiper', {
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+    nextEl: '.btnImageNext',
+    prevEl: '.btnImagePrev'
   },
   // Optional parameters
   direction: 'horizontal',
@@ -3215,6 +3215,15 @@ var swiper = new Swiper('.swiper', {
     enabled: true,
     delay: 3000
   }
+});
+var swiper2 = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: '.btnCardNext',
+    prevEl: '.btnCardPrev'
+  },
+  direction: 'horizontal',
+  loop: true,
+  speed: 500
 });
 
 /***/ }),

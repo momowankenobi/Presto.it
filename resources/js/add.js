@@ -45,19 +45,27 @@ $(function(){
         });
     }
 })
-
-const swiper = new Swiper('.swiper', {
-// Navigation arrows
+const swiper1 = new Swiper('.imageSwiper', {
+    // Navigation arrows
+        navigation: {
+            nextEl: '.btnImageNext',
+            prevEl: '.btnImagePrev',
+        },
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        speed: 2000,
+        autoplay: {
+            enabled: true,
+            delay: 3000,
+        },
+});
+let swiper2 = new Swiper(".mySwiper", {
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.btnCardNext',
+        prevEl: '.btnCardPrev',
     },
-    // Optional parameters
     direction: 'horizontal',
     loop: true,
-    speed: 2000,
-    autoplay: {
-        enabled: true,
-        delay: 3000,
-    }
-});
+    speed: 500
+})

@@ -33,10 +33,8 @@ Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::
 Route::get('/administration/panelcontrol/revisors', [AdminController::class, 'showrev'])->name('admin.showrev'); //Pannello di controllo vista revisori
 Route::post('/administration/panelcontrol/revisors/{id}/accept',[AdminController::class, 'accept'])->name('admin.accept'); //Pannello di controllo vista revisori bottone accetta
 Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController::class, 'reject'])->name('admin.reject'); //Pannello di controllo vista revisori bottone rifiuta
-// Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index'); //Lavora con noi
-// Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit');
-Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
-
+Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index'); //Lavora con noi
+Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit'); //Invio email
+Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale'); //Multilingua
 Route::get('/administration/panelcontrol/rejectadds', [RevisorController::class, 'rejectadd'])->name('admin.rejectadd'); //Pannello di controllo vista cestino annunci
-
 Route::post('/administration/panelcontrol/adds/{id}/back',[RevisorController::class, 'back'])->name('revisor.back'); //Pannello di controllo vista revisori bottone cestino

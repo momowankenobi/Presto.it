@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="w-75 text-center">
-                {{-- <a class="text-darker" href="{{route('work.index')}}">Lavora con noi!</a> --}}
+                <a style="font-size: 18px" class="text-darker my-2 badge bg-accent" href="{{route('work.index')}}">Lavora con noi!</a>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit repellat accusamus doloremque
                     facere ex adipisci!.</p>
             </div>
