@@ -10,11 +10,11 @@
             }
         </style>
     </x-slot>
-  @if ($adds)
-  {{-- <div class="container">
+  @if ($add)
+  <div class="container">
       <div class="row justify-content-center mt-3">
           <div class="d-flex justify-content-center">
-            <div class="col-12 col-md-6 col-xl-4 p-4">
+            <div class="col-12 col-md-6 p-4">
                 <div class="card-sl">
                     <div class="card-image">
                         <img class="img-fluid" style="width: 100%" src="https://via.placeholder.com/300x150"/>
@@ -75,9 +75,9 @@
               </form>
           </div>
       </div>
-  </div> --}}
-  <div class="container">
-    <div class="table-responsive">
+  </div>
+  {{-- <div class="container">
+    <div class="table-responsive"> --}}
         {{-- <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -118,7 +118,7 @@
             @endforeach    
           </tbody>
         </table> --}}
-        <table class="table table-hover" style="border-collapse: collapse;">
+        {{-- <table class="table table-hover" style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -149,26 +149,24 @@
                         </td>
                         <td>{{$add->created_at}}</td>
                     </tr>
-                    <tr>
-                        <td class="hiddenRow">
-                            <div>
+                    <tbody>
+                        @foreach ($add->images as $item)
+                        <tr>
+                            <td class="hiddenRow">
                                 <div id="collapseSection-{{$add->id}}" class="accordion-collapse collapse">
-                                    @foreach ($add->images as $item)
-                                        <div class="container">
-                                            <div class="row my-2 justify-content-center">
-                                                <div class="col-10">
-                                                    <img class="img-fluid" style="height: 150px" src="{{Storage::url($item->file)}}" alt="">
-                                                </div>
-                                                <div class="col-12">
-                                                    <p>{{$add->description}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
+                                    <div>
+                                        <img class="img-fluid" style="height: 150px" src="{{Storage::url($item->file)}}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                            <td class="hiddenRow">
+                                <div>
+                                    <p>{{$add->description}}</p>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
             @endforeach
             </tbody>
         </table>
@@ -180,7 +178,7 @@
             $('.collapse.in').collapse('hide');
         });
     </script>
-</x-slot>
+</x-slot> --}}
   @else
   <div class="container">
       <div class="row">
