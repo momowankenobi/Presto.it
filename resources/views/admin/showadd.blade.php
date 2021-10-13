@@ -5,13 +5,16 @@
           *{
             color: white;
           }
+          .hiddenRow {
+                padding: 0 !important;
+            }
         </style>
     </x-slot>
   @if ($add)
   <div class="container">
       <div class="row justify-content-center mt-3">
           <div class="d-flex justify-content-center">
-            <div class="col-12 col-md-6 col-xl-4 p-4">
+            <div class="col-12 col-md-6 p-4">
                 <div class="card-sl">
                     <div class="card-image">
                         <img class="img-fluid" style="width: 100%" src="https://via.placeholder.com/300x150"/>
@@ -29,6 +32,14 @@
                        {{  $image->id  }} <br>
                        {{  $image->file  }} <br>
                        {{  Storage::url($image->file)  }}
+
+                       <ul class="">
+                           @if ($image->labels)
+                             @foreach ($image->labels as $label)
+                                <li class="text-darker">{{$label}}</li>
+                             @endforeach
+                           @endif
+                       </ul>
                        @endforeach
 
 
@@ -65,6 +76,109 @@
           </div>
       </div>
   </div>
+  {{-- <div class="container">
+    <div class="table-responsive"> --}}
+        {{-- <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome Utente</th>
+              <th scope="col">Email</th>
+              <th scope="col">Immagine</th>
+              <th scope="col">Rifiuta</th>
+              <th scope="col">Accetta</th>
+              <th scope="col">Creazione Account</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($adds as $add)
+            <tr>
+                <td>{{$add->id}}</td>
+                <td>{{$add->title}}</td>
+                <td>{{$add->description}}</td>
+                <td>
+                    @foreach ($add->images as $item)
+                        <img class="img-fluid" style="height: 50px" src="{{Storage::url($item->file)}}" alt="">
+                    @endforeach
+                </td>
+                <td>
+                    <form method="POST" action="{{route('revisor.reject', with($add->id))}}" >
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Rifiuta</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{{route('revisor.accept', with($add->id))}}" >
+                        @csrf
+                        <button class="btn btn-success" type="submit">Accetta</button>
+                    </form>
+                </td>
+                <td>{{$add->created_at}}</td>
+            </tr>
+            @endforeach    
+          </tbody>
+        </table> --}}
+        {{-- <table class="table table-hover" style="border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome Utente</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rifiuta</th>
+                    <th scope="col">Accetta</th>
+                    <th scope="col">Creazione Account</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach ($adds as $add)
+                        <tr data-bs-toggle="collapse" data-bs-target="#collapseSection-{{$add->id}}">
+                        <td>{{$add->id}}</td>
+                        <td>{{$add->title}}</td>
+                        <td>{{$add->description}}</td>
+                        <td>
+                            <form method="POST" action="{{route('revisor.reject', with($add->id))}}" >
+                                @csrf
+                                <button class="btn rounded-pill btn-danger" type="submit">Rifiuta</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{route('revisor.accept', with($add->id))}}" >
+                                @csrf
+                                <button class="btn rounded-pill btn-success" type="submit">Accetta</button>
+                            </form>
+                        </td>
+                        <td>{{$add->created_at}}</td>
+                    </tr>
+                    <tbody>
+                        @foreach ($add->images as $item)
+                        <tr>
+                            <td class="hiddenRow">
+                                <div id="collapseSection-{{$add->id}}" class="accordion-collapse collapse">
+                                    <div>
+                                        <img class="img-fluid" style="height: 150px" src="{{Storage::url($item->file)}}" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div>
+                                    <p>{{$add->description}}</p>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+  </div>
+<x-slot name="script">
+    <script>
+        $('.collapse').on('show.bs.collapse', function () {
+            $('.collapse.in').collapse('hide');
+        });
+    </script>
+</x-slot> --}}
   @else
   <div class="container">
       <div class="row">
