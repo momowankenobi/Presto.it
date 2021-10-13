@@ -60,8 +60,8 @@ class AddController extends Controller
             $i->file = $newFileName;
             $i->add_id = $add->id;
             $i->save();
-            // dispatch(new GoogleVisionSafeSearchImage($i->id));
-            // dispatch(new GoogleVisionLabelImage($i->id));
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
