@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'home']) ->name('home'); //Homepage
-Route::get('/article/form', [AddController::class, 'new'])->name('articleNew'); //Form
-Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store'); //Ricezione dati dal form e invio sul database
+Route::get('/add/form', [AddController::class, 'new'])->name('add.new'); //Form
+Route::post('/add/form/submit', [AddController::class, 'store'])->name('add.store'); //Ricezione dati dal form e invio sul database
 Route::post('/add/images/upload', [AddController::class, 'upload'])->name('add.upload');
 Route::delete('/add/images/remove', [AddController::class, 'remove'])->name('add.remove');
 Route::get('/add/images', [AddController::class, 'getImages'])->name('add.getImages');
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
-Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
+Route::get('/add/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
 Route::get('/search', [AddController::class, 'search'])->name('search'); //Search
 Route::get('/administration/panelcontrol', [RevisorController::class, 'index'])->name('admin.index'); //Pannello di controllo
 Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd'); //Pannello di controllo vista annunci

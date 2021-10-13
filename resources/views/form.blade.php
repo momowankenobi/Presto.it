@@ -72,7 +72,7 @@
                 <div class="col-7">
                     <div class="col-10 mx-auto mt-4">
                         <div>
-                            <form method="POST" enctype="multipart/form-data" action="{{route('article.store')}}">
+                            <form method="POST" enctype="multipart/form-data" action="{{route('add.store')}}">
                                 @csrf
                                 <input 
                                     type="hidden"

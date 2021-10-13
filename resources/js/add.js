@@ -45,3 +45,19 @@ $(function(){
         });
     }
 })
+
+const swiper = new Swiper('.swiper', {
+// Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    speed: 2000,
+    autoplay: {
+        enabled: true,
+        delay: 3000,
+    }
+});
