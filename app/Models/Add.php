@@ -49,4 +49,8 @@ class Add extends Model
     static public function ToBeRevisionedCount(){
         return Add::where('is_accepted',null)->count();
     }
+
+    static public function RejectedCount(){
+        return Add::where('is_accepted',false)->count();
+    }
 }

@@ -34,6 +34,14 @@
                       Annunci <span class="badge rounded-circle bg-danger"> {{App\Models\Add::ToBeRevisionedCount()}}</span>
                     </a>
                   </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="{{route('admin.rejectadd')}}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                      Cestino <span class="badge rounded-circle bg-danger"> {{App\Models\Add::RejectedCount()}}</span>
+                    </a>
+                  </li>
+
                   @if(Auth::user()->is_admin)
                   <li class="nav-item">
                     <a class="nav-link text-light" href="{{route('admin.showrev')}}">
