@@ -18,13 +18,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PublicController::class, 'home']) ->name('home'); //Homepage
-Route::get('/article/form', [AddController::class, 'new'])->name('articleNew'); //Form
-Route::post('/article/form/submit', [AddController::class, 'store'])->name('article.store'); //Ricezione dati dal form e invio sul database
+Route::get('/add/form', [AddController::class, 'new'])->name('add.new'); //Form
+Route::post('/add/form/submit', [AddController::class, 'store'])->name('add.store'); //Ricezione dati dal form e invio sul database
+Route::get('/add/form/{add}/edit', [AddController::class, 'edit'])->name('add.edit'); //Ricezione dati dal form e invio sul database
+Route::put('/add/form/{add}/edit/submit', [AddController::class, 'update'])->name('add.update');
+Route::delete('/add/form/{add}/edit/delete', [AddController::class, 'destroy'])->name('add.destroy');
 Route::post('/add/images/upload', [AddController::class, 'upload'])->name('add.upload');
 Route::delete('/add/images/remove', [AddController::class, 'remove'])->name('add.remove');
 Route::get('/add/images', [AddController::class, 'getImages'])->name('add.getImages');
 Route::get('/category/{name}/{id}', [PublicController::class, 'categoryList'])->name('public.adds.category'); //Articoli per Categorie 
-Route::get('/article/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
+Route::get('/add/show/{add}', [AddController::class, 'show'])->name('add.show'); //View per Categorie 
 Route::get('/search', [AddController::class, 'search'])->name('search'); //Search
 Route::get('/administration/panelcontrol', [RevisorController::class, 'index'])->name('admin.index'); //Pannello di controllo
 Route::get('/administration/panelcontrol/adds', [RevisorController::class, 'showadd'])->name('admin.showadd'); //Pannello di controllo vista annunci
@@ -33,6 +36,8 @@ Route::post('/administration/panelcontrol/adds/{id}/reject',[RevisorController::
 Route::get('/administration/panelcontrol/revisors', [AdminController::class, 'showrev'])->name('admin.showrev'); //Pannello di controllo vista revisori
 Route::post('/administration/panelcontrol/revisors/{id}/accept',[AdminController::class, 'accept'])->name('admin.accept'); //Pannello di controllo vista revisori bottone accetta
 Route::post('/administration/panelcontrol/revisors/{id}/reject',[AdminController::class, 'reject'])->name('admin.reject'); //Pannello di controllo vista revisori bottone rifiuta
-// Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index'); //Lavora con noi
-// Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit');
-Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
+Route::get('/workwithUS', [PublicController::class, 'workindex'])->name('work.index')->middleware(('auth')); //Lavora con noi
+Route::post('/workwithUS/submit', [PublicController::class, 'worksubmit'])->name('work.submit')->middleware('auth'); //Invio email
+Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale'); //Multilingua
+Route::get('/administration/panelcontrol/rejectadds', [RevisorController::class, 'rejectadd'])->name('admin.rejectadd'); //Pannello di controllo vista cestino annunci
+Route::post('/administration/panelcontrol/adds/{id}/back',[RevisorController::class, 'back'])->name('revisor.back'); //Pannello di controllo vista revisori bottone cestino

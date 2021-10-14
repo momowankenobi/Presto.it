@@ -3201,6 +3201,30 @@ $(function () {
     });
   }
 });
+var swiper1 = new Swiper('.imageSwiper', {
+  // Navigation arrows
+  navigation: {
+    nextEl: '.btnImageNext',
+    prevEl: '.btnImagePrev'
+  },
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  speed: 2000,
+  autoplay: {
+    enabled: true,
+    delay: 3000
+  }
+});
+var swiper2 = new Swiper(".mySwiper", {
+  navigation: {
+    nextEl: '.btnCardNext',
+    prevEl: '.btnCardPrev'
+  },
+  direction: 'horizontal',
+  loop: true,
+  speed: 500
+});
 
 /***/ }),
 

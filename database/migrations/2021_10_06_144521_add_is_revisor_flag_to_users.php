@@ -14,7 +14,7 @@ class AddIsRevisorFlagToUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_revisor')->after('password')->nullable();
+            $table->boolean('is_revisor')->after('password')->nullable()->default(false);
         });
     }
 

@@ -9,6 +9,7 @@ use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddRequest;
 use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -32,39 +33,27 @@ class AddController extends Controller
             'price'=>$request->price,
             'category_id'=>$request->category
         ]);
-
         $uniqueSecret=$request->input('uniqueSecret'); 
         $images=session()->get("images.{$uniqueSecret}", []);
         $removedimages=session()->get("removedimages.{$uniqueSecret}", []);
-
         $images = array_diff($images, $removedimages);
-
         foreach ($images as $image){
             $i = new Images();
             $fileName = basename($image);
             $newFileName = "public/adds/{$add->id}/{$fileName}";
             Storage::move($image, $newFileName);
-            dispatch(new ResizeImage(
-                $newFileName,
-                300,
-                150
-            ));
-
-            dispatch(new ResizeImage(
-                $newFileName,
-                400,
-                300,
-            ));
-
-
             $i->file = $newFileName;
             $i->add_id = $add->id;
             $i->save();
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
-            dispatch(new GoogleVisionLabelImage($i->id));
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($newFileName, 300, 150),
+                new ResizeImage($newFileName, 400, 300)
+            ])->dispatch($i->id);
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
-        return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
+        return redirect(route('home'))->with('message', 'Il tuo annuncio è in fase di revisione!');
     }
 
     public function upload(Request $request){
@@ -77,6 +66,24 @@ class AddController extends Controller
         ));
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(["id"=>$fileName]);
+    }
+
+    public function show(Add $add){
+        return view('show', compact('add'));
+    }
+
+    public function edit(Add $add){
+        return view('editor', compact('add'));
+    }
+
+    public function update(AddRequest $request, Add $add){
+        $add->title = $request->title;
+        $add->description = $request->description;
+        $add->price = $request->price;
+        $add->category_id = $request->category;
+        $add->is_accepted = null;
+        $add->save();
+        return redirect(route('home'))->with('message', 'Il tuo annuncio è stato modificato, ed è in fase di revisione!');
     }
 
     public function remove(Request $request){
@@ -102,13 +109,16 @@ class AddController extends Controller
         return response()->json($data);
     }
 
-    public function show(Add $add){
-        return view('show', compact('add'));
-    }
-
     public function search(Request $request){
         $q = $request->input('q');
         $adds = Add::search($q)->where('is_accepted', true)->get();
         return view ('search', compact('q', 'adds'));
+    }
+
+    public function destroy(Add $add){
+        $add->category()->dissociate();
+        $add->images()->delete();
+        $add->delete();
+        return redirect(route('home'))->with('messageDelete', 'Il tuo annuncio è stato eliminato!');
     }
 }

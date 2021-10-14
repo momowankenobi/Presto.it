@@ -24,7 +24,7 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
         </li> --}}
           <li class="nav-item">
-            <a class="nav-link text-light" href="{{route('articleNew')}}">Crea annuncio</a>
+            <a class="nav-link text-light" href="{{route('add.new')}}">Crea annuncio</a>
           </li>
         <li class="nav-item dropdown">
           <a class="nav-link text-light dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>

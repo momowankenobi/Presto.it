@@ -26,7 +26,20 @@
 <div class="col-12 col-md-6 col-xl-4 p-4">
     <div class="card-sl">
         <div class="card-image">
-            <img class="img-fluid" style="width: 100%" src="https://via.placeholder.com/300x150"/>
+            @if (count($add->images))
+              <div class="swiper imageSwiper rounded">
+                  <div class="swiper-wrapper">
+                    @foreach ($add->images as $image)
+                        <div class="swiper-slide"><img src="{{$image->getUrl(300, 150)}}" style="width: 100%" class="" alt=""></div>
+                    @endforeach      
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="{{$add->category->color}} btnImagePrev swiper-button-prev"></div>
+                  <div class="{{$add->category->color}} btnImageNext swiper-button-next"></div>
+              </div>
+            @else
+              <img src="https://via.placeholder.com/300x150" style="width: 100%" class="" alt="">
+            @endif
         </div>
         <div class="card-heading">
             <a href="{{route('add.show', compact('add'))}}">{{$add->title}}</a>

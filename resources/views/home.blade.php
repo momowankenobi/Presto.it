@@ -6,6 +6,12 @@
                 {{ session('message') }}
             </div>
         </div>
+    @elseif (session('messageDelete'))
+        <div class="d-flex justify-content-center">
+            <div class="alert mt-2 text-light alert-danger">
+                {{ session('messageDelete') }}
+            </div>
+        </div>
     @endif
     {{-- Header e searchbar --}}
     <div class="container-fluid d-flex justify-content-center headContainer vh-75 bg-night">

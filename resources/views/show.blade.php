@@ -41,7 +41,7 @@
                 <a class="nav-link" href="{{route('home')}}">Home</a>
               </li> --}}
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="{{route('articleNew')}}">Crea annuncio</a>
+                  <a class="nav-link text-light" href="{{route('add.new')}}">Crea annuncio</a>
                 </li>
               <li class="nav-item dropdown">
                 <a class="nav-link text-light dropdown-toggle" data-bs-toggle="dropdown">Categorie</a>
@@ -131,29 +131,46 @@
                     <div class="row justify-content-center">
                         <div class="col-md-6 mt-4">
                             <div class="card-sl">
-                                <div class="card-image">
-                                    <div class="swiper rounded">
-                                        <!-- Additional required wrapper -->
-                                        <div class="swiper-wrapper">
-                                        <!-- Slides -->
+                              <div class="card-image">
+                                @if (count($add->images))
+                                  <div class="swiper imageSwiper rounded">
+                                      <div class="swiper-wrapper">
                                         @foreach ($add->images as $image)
-                                          <div class="swiper-slide"><img src="{{$image->getUrl(300, 150)}}" style="width: 100%" class="" alt=""></div>
-                                        @endforeach
-                                        {{-- @dd($add->images->getUrl(300,150)) --}}
-                                        </div>
-                                        <!-- If we need pagination -->
-                                        <div class="swiper-pagination"></div>
-                                    
-                                        <!-- If we need navigation buttons -->
-                                        <div class="swiper-button-prev"></div>
-                                        <div class="swiper-button-next"></div>
+                                            <div class="swiper-slide"><img src="{{$image->getUrl(300, 150)}}" style="width: 100%" class="" alt=""></div>
+                                        @endforeach      
+                                      </div>
+                                      <div class="swiper-pagination"></div>
+                                      <div class="{{$add->category->color}} btnImagePrev swiper-button-prev"></div>
+                                      <div class="{{$add->category->color}} btnImageNext swiper-button-next"></div>
+                                  </div>
+                                @else
+                                  <img src="https://via.placeholder.com/300x150" style="width: 100%" class="" alt="">
+                                @endif
+                              </div>
+                                <div class="card-heading d-flex justify-content-between align-items-center">
+                                    <div>
+                                      <a href="{{route('add.show', compact('add'))}}">{{$add->title}}</a>
                                     </div>
-                                </div>
-                                <div class="card-heading">
-                                    <a href="{{route('add.show', compact('add'))}}">{{$add->title}}</a>
+                                    @auth
+                                      @if(Auth::user()->id === $add->user->id)
+                                        <div class="d-flex">
+                                          <div>
+                                            <form method="POST" action="{{route('add.destroy', compact('add'))}}">
+                                              @csrf
+                                              @method('delete')
+                                              <button type="submit" class="btn rounded-pill btn-danger"><i class="fas fa-trash"></i></button>
+                                            </form>
+                                          </div>
+                                          <div class="mx-1">
+                                            <a href="{{route('add.edit', compact('add'))}}" class="btn rounded-pill {{$add->category->bgcolor}} text-light"><i class="fas fa-pencil-alt"></i></a>
+                                          </div>
+                                        </div>
+                                      @endif
+                                    @endauth
                                 </div>
                                 <div class="card-text">
                                     <b class="fs-3">€{{$add->price}}</b>
+                                    <p class="text-darker m-0">{{$add->description}}</p>
                                 </div>
                                 <div class="card-footer text-darker d-flex justify-content-start">
                                     <strong class="text-darker">Categoria:&nbsp&nbsp
@@ -183,17 +200,5 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- js  bootstrap--}}
     <script src="{{asset('js/app.js')}}"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        });
-    </script>
 </body>
 </html>

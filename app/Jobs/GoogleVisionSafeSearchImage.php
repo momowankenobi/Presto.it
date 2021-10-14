@@ -34,7 +34,7 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
     public function handle()
     {
         $i = Images::find($this->image_id);
-        if(! $i){
+        if(!$i){
             return;
         }
         $image = file_get_contents(storage_path('/app/' . $i->file));
