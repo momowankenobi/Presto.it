@@ -615,11 +615,13 @@ video {
   .categorycontainer:hover img{
     transform: scale(1.1);
   }
+
 .alert{
     border-radius: 25px;
     width: 50%;
     align-self: center;
     margin-bottom: 0 !important;
+    animation: fade-down 650ms 400ms backwards;
 }
 .alert-success{
     background-color: #33AB83 !important;
@@ -629,4 +631,28 @@ video {
 .alert-danger{
     background-color: #FF4365 !important;
     border: none;
+}
+.announcementdiv{
+    animation: fade-in 1200ms 600ms backwards;
+}
+
+@keyframes fade-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

@@ -12305,11 +12305,14 @@ video {
   .categorycontainer:hover img{
     transform: scale(1.1);
   }
+
 .alert{
     border-radius: 25px;
     width: 50%;
     align-self: center;
     margin-bottom: 0 !important;
+    -webkit-animation: fade-down 650ms 400ms backwards;
+            animation: fade-down 650ms 400ms backwards;
 }
 .alert-success{
     background-color: #33AB83 !important;
@@ -12320,7 +12323,52 @@ video {
     background-color: #FF4365 !important;
     border: none;
 }
+.announcementdiv{
+    -webkit-animation: fade-in 1200ms 600ms backwards;
+            animation: fade-in 1200ms 600ms backwards;
+}
 
+@-webkit-keyframes fade-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-down {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;
