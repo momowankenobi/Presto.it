@@ -36,8 +36,8 @@ class PublicController extends Controller
         $contatto = compact('user', 'message', 'email');
         Mail::to($email)->send(new ContactMail($contact));
         Mail::to('staff@presto.it')->send(new ReceivedMail($contatto));
-        $user_auth->is_revisor = null;
-        $user_auth->save();
+        $user_auth->is_revisor = NULL;
+        $user_auth->save(); 
         return redirect(route('home'))->with('message', 'La tua candidatura è stata inviata con successo.');
     }
 
