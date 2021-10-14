@@ -27,21 +27,15 @@
     <div class="card-sl">
         <div class="card-image">
             @if (count($add->images))
-              <div class="swiper rounded">
-                  <!-- Additional required wrapper -->
+              <div class="swiper imageSwiper rounded">
                   <div class="swiper-wrapper">
-                  <!-- Slides -->
                     @foreach ($add->images as $image)
                         <div class="swiper-slide"><img src="{{$image->getUrl(300, 150)}}" style="width: 100%" class="" alt=""></div>
                     @endforeach      
-                    {{-- @dd($add->images->getUrl(300,150)) --}}
                   </div>
-                    <!-- If we need pagination -->
                   <div class="swiper-pagination"></div>
-                    
-                    <!-- If we need navigation buttons -->
-                  <div class="{{$add->category->color}} swiper-button-prev"></div>
-                  <div class="{{$add->category->color}} swiper-button-next"></div>
+                  <div class="{{$add->category->color}} btnImagePrev swiper-button-prev"></div>
+                  <div class="{{$add->category->color}} btnImageNext swiper-button-next"></div>
               </div>
             @else
               <img src="https://via.placeholder.com/300x150" style="width: 100%" class="" alt="">

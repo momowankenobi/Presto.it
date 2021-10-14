@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'home']) ->name('home'); //Homepage
 Route::get('/add/form', [AddController::class, 'new'])->name('add.new'); //Form
 Route::post('/add/form/submit', [AddController::class, 'store'])->name('add.store'); //Ricezione dati dal form e invio sul database
+Route::get('/add/form/{add}/edit', [AddController::class, 'edit'])->name('add.edit'); //Ricezione dati dal form e invio sul database
+Route::put('/add/form/{add}/edit/submit', [AddController::class, 'update'])->name('add.update');
+Route::delete('/add/form/{add}/edit/delete', [AddController::class, 'destroy'])->name('add.destroy');
 Route::post('/add/images/upload', [AddController::class, 'upload'])->name('add.upload');
 Route::delete('/add/images/remove', [AddController::class, 'remove'])->name('add.remove');
 Route::get('/add/images', [AddController::class, 'getImages'])->name('add.getImages');

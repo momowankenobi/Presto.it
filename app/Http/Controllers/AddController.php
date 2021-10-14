@@ -33,13 +33,10 @@ class AddController extends Controller
             'price'=>$request->price,
             'category_id'=>$request->category
         ]);
-
         $uniqueSecret=$request->input('uniqueSecret'); 
         $images=session()->get("images.{$uniqueSecret}", []);
         $removedimages=session()->get("removedimages.{$uniqueSecret}", []);
-
         $images = array_diff($images, $removedimages);
-
         foreach ($images as $image){
             $i = new Images();
             $fileName = basename($image);
@@ -71,6 +68,24 @@ class AddController extends Controller
         return response()->json(["id"=>$fileName]);
     }
 
+    public function show(Add $add){
+        return view('show', compact('add'));
+    }
+
+    public function edit(Add $add){
+        return view('editor', compact('add'));
+    }
+
+    public function update(AddRequest $request, Add $add){
+        $add->title = $request->title;
+        $add->description = $request->description;
+        $add->price = $request->price;
+        $add->category_id = $request->category;
+        $add->is_accepted = null;
+        $add->save();
+        return redirect(route('home'))->with('message', 'Il tuo annuncio è stato modificato, ed è in fase di revisione!');
+    }
+
     public function remove(Request $request){
         $uniqueSecret=$request->input('uniqueSecret'); 
         $fileName = $request->input('id');
@@ -94,13 +109,16 @@ class AddController extends Controller
         return response()->json($data);
     }
 
-    public function show(Add $add){
-        return view('show', compact('add'));
-    }
-
     public function search(Request $request){
         $q = $request->input('q');
         $adds = Add::search($q)->where('is_accepted', true)->get();
         return view ('search', compact('q', 'adds'));
+    }
+
+    public function destroy(Add $add){
+        $add->category()->dissociate();
+        $add->images()->delete();
+        $add->delete();
+        return redirect(route('home'))->with('messageDelete', 'Il tuo annuncio è stato eliminato!');
     }
 }
