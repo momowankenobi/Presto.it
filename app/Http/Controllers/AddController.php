@@ -56,7 +56,7 @@ class AddController extends Controller
             ])->dispatch($i->id);
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
-        return redirect(route('home'))->with('message', 'Il tuo annuncio è stato inserito.');
+        return redirect(route('home'))->with('message', 'Il tuo annuncio è in fase di revisione!');
     }
 
     public function upload(Request $request){

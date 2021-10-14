@@ -30,17 +30,24 @@
                         <p class="text-muted">Ci piace essere smart e poter scegliere il posto migliore da cui connetterci e lavorare!</p>
                     </div>
                 </div>
-                <form class="" action="" method="post">
-                    <div class="form mb-3">
-                        <label class="form-label">Parlaci un pò di te</label>
-                        <textarea class="form-control" name="message" placeholder="Scrivi il tuo messaggio" rows="5">
-                            {{old('description')}} 
-                        </textarea>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn text-light rounded-pill bg-night">Invia</button>
-                    </div>
-                </form>
+                @if(Auth::user()->is_revisor || Auth::user()->is_admin)
+                    <h4 class="text-center">Sei già membro della nostra famiglia!</h4>
+                @elseif(Auth::user()->is_revisor === null)
+                    <h4 class="text-center">Hai già effettuato la richiesta, attendi l'approvazione!</h4>
+                @else
+                    <form class="" action="{{route('work.submit')}}" method="post">
+                        @csrf
+                        <div class="form mb-3">
+                            <label class="form-label">Parlaci un pò di te</label>
+                            <textarea class="form-control" name="message" placeholder="Scrivi il tuo messaggio" rows="5">
+                                {{old('description')}} 
+                            </textarea>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn text-light rounded-pill bg-night">Invia</button>
+                        </div>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

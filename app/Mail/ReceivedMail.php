@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class ReceivedMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $contatto;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contatto)
     {
-        //
+        $this->contatto = $contatto;
     }
 
     /**
@@ -26,8 +26,8 @@ class ReceivedMail extends Mailable
      *
      * @return $this
      */
-    public function build()
-    {
-        return $this->view('view.name');
+    public function build(){
+        return $this->from($this->contatto['email'])
+                    ->view('mails.receivedmail');
     }
 }
