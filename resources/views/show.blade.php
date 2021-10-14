@@ -127,7 +127,7 @@
                       <div class="wave wave4"></div>
                     </div>
                 </div>
-                <div class="container py-5">
+                <div class="container announcementdiv py-5">
                     <div class="row justify-content-center">
                         <div class="col-md-6 mt-4">
                             <div class="card-sl">

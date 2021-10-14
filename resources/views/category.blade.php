@@ -131,7 +131,7 @@
                       <div class="wave wave4"></div>
                     </div>
                 </div>
-                <div class="container mt-3">
+                <div class="container announcementdiv mt-3">
                     <div class="row justify-content-center">
                         @foreach ($adds as $add)
                             @include('components.card')    
