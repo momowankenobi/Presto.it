@@ -130,7 +130,7 @@
    
 
     {{-- annunci --}}
-    <div class="my-3 container">
+    <div class="my-3 announcementdiv container">
         <div class="row justify-content-center">
             <h1 class="text-center display-4">{{__('ui.best')}}</h1>
         </div>
