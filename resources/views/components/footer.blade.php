@@ -11,15 +11,18 @@
                 </div>
             </div>
             <div class="w-75 text-center">
-                <a style="font-size: 18px" class="text-darker my-2 badge bg-accent" href="{{route('work.index')}}">Lavora con noi!</a>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit repellat accusamus doloremque
-                    facere ex adipisci!.</p>
+                <a style="font-size: 18px" class="text-darker my-2 mb-4 badge bg-accent" href="{{route('work.index')}}">Lavora con noi!</a>
+                <p class="">Powered by: <span style="font-weight: 800">DVDs</span></p>
+                <p class="text-start">Copyright © 2021 Presto.it Inc. Tutti i diritti riservati.</p>
             </div>
         </div>
         <div style="background-color: #4E79BA" class="col-12 col-md-6 d-flex text-light flex-column align-items-center justify-content-around p-3">
-            <div class="p-4 mb-4">
+            <div class="mb-4">
                 <a id="navLogo" class="nav-link text-light" href="{{route('home')}}"><i
                         class="fab fa-product-hunt fa-3x"></i>resto.it</a>
+            </div>
+            <div>
+                <p class="text-center">Metodi di pagamento accettati:</p>
             </div>
             <div class="d-flex w-100 align-items-center justify-content-around">
                 <i class="fab fa-3x fa-cc-visa"></i>
